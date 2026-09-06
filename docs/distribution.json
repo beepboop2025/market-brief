@@ -1,7 +1,7 @@
 {
   "schema": "market-brief.distribution.v1",
   "version": "0.1.0",
-  "checked_at": "2026-09-06T16:17:02.311324Z",
+  "checked_at": "2026-09-06T16:41:28.678288Z",
   "price": {
     "status": "free_early_access",
     "billing_enabled": false,
@@ -75,66 +75,67 @@
     },
     {
       "id": "chat2anyllm",
-      "state": "accepted_pending_index",
+      "state": "listed_partial",
       "url": "https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/165",
-      "detail": "PR merged; both source configuration entries are present. Downstream searchable listings are not yet verified live.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "detail": "Configuration PR merged. The downstream skills catalog now publicly lists Market Brief. The separate plugin catalog has a generation failure, so plugin indexing is still unverified.",
+      "checked_at": "2026-09-06T16:36:50.675Z",
+      "listing_url": "https://github.com/Chat2AnyLLM/awesome-claude-skills/blob/main/README.md"
     },
     {
       "id": "ccplugins",
       "state": "submitted_review",
       "url": "https://github.com/ccplugins/awesome-claude-code-plugins/pull/451",
       "detail": "Open contribution PR; maintainer review pending.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:36:50.675Z"
     },
     {
       "id": "agent-skill-index",
       "state": "submitted_review",
       "url": "https://github.com/heilcheng/awesome-agent-skills/pull/475",
       "detail": "Open contribution PR; preview deployment requires maintainer authorization.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:36:50.675Z"
     },
     {
       "id": "awesome-quant",
       "state": "submitted_review",
       "url": "https://github.com/wilsonfreitas/awesome-quant/pull/639",
       "detail": "Open contribution PR; validation and PR review checks passed.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:36:50.675Z"
     },
     {
       "id": "investing-tools",
       "state": "submitted_review",
       "url": "https://github.com/Jera-Value/awesome-investing-tools-and-software-directory/pull/42",
       "detail": "Open contribution PR; generated directory check passed.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:36:50.675Z"
     },
     {
       "id": "developer-finance",
       "state": "submitted_review",
       "url": "https://github.com/mrtnrocks/awesome-developer-finance/pull/20",
-      "detail": "Open contribution PR; maintainer review pending.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "detail": "Updated the existing PR with direct browser and v0.1.0 release links requested in review. Formatting and links passed. Maintainer acceptance remains pending.",
+      "checked_at": "2026-09-06T16:39:13.221Z"
     },
     {
       "id": "finance-mcp-skills",
       "state": "submitted_review",
       "url": "https://github.com/BlockRunAI/awesome-finance-mcp/pull/65",
       "detail": "Submitted in the existing Skills section as a local research workflow. This is not a new MCP-server listing.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:36:50.675Z"
     },
     {
       "id": "ai-in-finance",
       "state": "submitted_review",
       "url": "https://github.com/georgezouq/awesome-ai-in-finance/pull/249",
       "detail": "Open contribution PR in the Skills section.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:36:50.675Z"
     },
     {
       "id": "openagentskill",
       "state": "listed_restricted",
       "url": "https://www.openagentskill.com/skills/beepboop2025-market-brief-market-brief",
       "detail": "Public community listing verified. Ownership is unverified; the site labels it Sandbox only and blocks automatic installation. This is not a verified endorsement.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:35:56.829Z"
     },
     {
       "id": "listai",
@@ -155,7 +156,7 @@
       "state": "listed",
       "url": "https://skills.re/skills/beepboop2025/market-brief/market-brief",
       "detail": "Public page and documented API verified. Snapshot points to release commit 4b50c6d33f070d7a3db8a049e36cbded66cc55c7. The registry labels its own snapshot 1.0.0; the submitted GitHub release is v0.1.0.",
-      "checked_at": "2026-09-06T13:20:44Z"
+      "checked_at": "2026-09-06T16:35:57.497Z"
     },
     {
       "id": "claude-skills-hub",
@@ -226,6 +227,55 @@
       "url": "https://beepboop2025.github.io/financial-evidence-skills/",
       "checked_at": "2026-09-06T16:17:02.311324Z",
       "detail": "Browser and publisher-kit links merged in PR 17. Public homepage bytes exactly match merge e17513a00ecc8058101262c55879c268c9c2ec8a."
+    },
+    {
+      "id": "behisecc",
+      "state": "submitted_review",
+      "url": "https://github.com/BehiSecc/awesome-claude-skills/pull/679",
+      "detail": "Submitted to Data & Analysis; maintainer review pending.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00"
+    },
+    {
+      "id": "composio",
+      "state": "submitted_review",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills/pull/1840",
+      "detail": "Submitted to Data & Analysis; maintainer review pending. All three upstream checks passed; the ready-to-merge label is not an acceptance.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00"
+    },
+    {
+      "id": "libukai",
+      "state": "submitted_review",
+      "url": "https://github.com/libukai/awesome-agent-skills/pull/150",
+      "detail": "Submitted to Curated Skills / Other Types; maintainer review pending. Entries synchronized across Chinese, English and Japanese READMEs; counted as one directory submission.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00"
+    },
+    {
+      "id": "ai-for-economists",
+      "state": "submitted_review",
+      "url": "https://github.com/hanlulong/awesome-ai-for-economists/pull/14",
+      "detail": "Submitted one README entry in Finance-Specific AI. Link, duplicate and diff checks passed; no upstream CI checks reported. Maintainer review pending.",
+      "checked_at": "2026-09-06T16:40:05.792863+00:00"
+    },
+    {
+      "id": "ai4finance",
+      "state": "submitted_review",
+      "url": "https://github.com/AI4Finance-Foundation/Awesome_AI4Finance/pull/26",
+      "detail": "Submitted one README entry in Data Sources. Link, duplicate and diff checks passed; no upstream CI checks reported. Maintainer review pending.",
+      "checked_at": "2026-09-06T16:40:05.792863+00:00"
+    },
+    {
+      "id": "chathome",
+      "state": "submitted_review",
+      "url": "https://skill.chathome.org/en/submit",
+      "detail": "Catalog check returned no match. New-repository form confirmed: Report received; a maintainer will review it. Reference #44. Public listing not yet verified.",
+      "checked_at": "2026-09-06T16:38:18.927Z"
+    },
+    {
+      "id": "tipseason",
+      "state": "submitted_review",
+      "url": "https://www.tipseason.com/ai-tools/submit-free",
+      "detail": "Browser redirected to Submission Received and confirmed the standard free queue. The site reports a 180+ day backlog; acceptance is not guaranteed. No paid upgrade or advertising was selected.",
+      "checked_at": "2026-09-06T16:38:18.927Z"
     }
   ],
   "release_commit": "4b50c6d33f070d7a3db8a049e36cbded66cc55c7",
@@ -240,5 +290,6 @@
   "submissions_url": "https://beepboop2025.github.io/market-brief/submissions.html",
   "submissions_data_url": "https://beepboop2025.github.io/market-brief/submissions.json",
   "browser_build_id": "2026-09-06-sharing",
-  "browser_verification_url": "https://beepboop2025.github.io/market-brief/browser-release.json"
+  "browser_verification_url": "https://beepboop2025.github.io/market-brief/browser-release.json",
+  "latest_submission_batch_url": "https://beepboop2025.github.io/market-brief/distribution-wave2.json"
 }

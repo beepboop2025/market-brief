@@ -1,18 +1,18 @@
 {
   "schema": "market-brief.submissions.v1",
   "version": "0.1.0",
-  "checked_at": "2026-09-06T13:20:44Z",
+  "checked_at": "2026-09-06T16:41:28.678288Z",
   "scope": "Free distribution of the released Market Brief skill, plugin and browser app.",
   "release_url": "https://github.com/beepboop2025/market-brief/releases/tag/v0.1.0",
   "source_url": "https://github.com/beepboop2025/market-brief",
   "cost_usd": 0,
   "counts": {
-    "catalog_pull_requests_filed": 8,
+    "catalog_pull_requests_filed": 13,
     "catalog_pull_requests_merged": 1,
-    "catalog_pull_requests_open": 7,
-    "catalog_entries_requested": 9,
-    "new_public_listings_verified": 2,
-    "additional_web_review_receipts": 2,
+    "catalog_pull_requests_open": 12,
+    "catalog_entries_requested": 14,
+    "new_public_listings_verified": 3,
+    "additional_web_review_receipts": 4,
     "unconfirmed_form_attempts": 1,
     "human_checks_remaining": 2
   },
@@ -23,71 +23,97 @@
   },
   "entries": [
     {
+      "checked_at": "2026-09-06T16:36:50.675Z",
       "id": "chat2anyllm",
       "name": "Chat2AnyLLM skill and plugin catalogs",
       "kind": "catalog_pr",
-      "state": "accepted_pending_index",
+      "state": "listed_partial",
       "url": "https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/165",
-      "detail": "PR merged; both source configuration entries are present. Downstream searchable listings are not yet verified live.",
-      "catalog_entries": 2
+      "detail": "Configuration PR merged. The downstream skills catalog now publicly lists Market Brief. The separate plugin catalog has a generation failure, so plugin indexing is still unverified.",
+      "catalog_entries": 2,
+      "pull_request_state": "MERGED",
+      "head_sha": "655ac8b42610d169d02510b911ded94d8c701b60",
+      "listing_url": "https://github.com/Chat2AnyLLM/awesome-claude-skills/blob/main/README.md"
     },
     {
+      "checked_at": "2026-09-06T16:36:50.675Z",
       "id": "ccplugins",
       "name": "Awesome Claude Code Plugins",
       "kind": "catalog_pr",
       "state": "submitted_review",
       "url": "https://github.com/ccplugins/awesome-claude-code-plugins/pull/451",
-      "detail": "Open contribution PR; maintainer review pending."
+      "detail": "Open contribution PR; maintainer review pending.",
+      "pull_request_state": "OPEN",
+      "head_sha": "4e956196ea9a403e96e8c27931b558b26077e529"
     },
     {
+      "checked_at": "2026-09-06T16:36:50.675Z",
       "id": "agent-skill-index",
       "name": "Agent Skill Index",
       "kind": "catalog_pr",
       "state": "submitted_review",
       "url": "https://github.com/heilcheng/awesome-agent-skills/pull/475",
-      "detail": "Open contribution PR; preview deployment requires maintainer authorization."
+      "detail": "Open contribution PR; preview deployment requires maintainer authorization.",
+      "pull_request_state": "OPEN",
+      "head_sha": "64f68e7379e01c6fb74e9ed9a7ce1aa0ff73260c"
     },
     {
+      "checked_at": "2026-09-06T16:36:50.675Z",
       "id": "awesome-quant",
       "name": "Awesome Quant",
       "kind": "catalog_pr",
       "state": "submitted_review",
       "url": "https://github.com/wilsonfreitas/awesome-quant/pull/639",
-      "detail": "Open contribution PR; validation and PR review checks passed."
+      "detail": "Open contribution PR; validation and PR review checks passed.",
+      "pull_request_state": "OPEN",
+      "head_sha": "7e58d966b070433e65e00146f80d6e842ab1ee6b"
     },
     {
+      "checked_at": "2026-09-06T16:36:50.675Z",
       "id": "investing-tools",
       "name": "Awesome Investing Tools and Software Directory",
       "kind": "catalog_pr",
       "state": "submitted_review",
       "url": "https://github.com/Jera-Value/awesome-investing-tools-and-software-directory/pull/42",
-      "detail": "Open contribution PR; generated directory check passed."
+      "detail": "Open contribution PR; generated directory check passed.",
+      "pull_request_state": "OPEN",
+      "head_sha": "da6b6214ab63a9abc856a201d24cc76084fbfde0"
     },
     {
+      "checked_at": "2026-09-06T16:39:13.221Z",
       "id": "developer-finance",
       "name": "Awesome Developer Finance",
       "kind": "catalog_pr",
       "state": "submitted_review",
       "url": "https://github.com/mrtnrocks/awesome-developer-finance/pull/20",
-      "detail": "Open contribution PR; maintainer review pending."
+      "detail": "Updated the existing PR with direct browser and v0.1.0 release links requested in review. Formatting and links passed. Maintainer acceptance remains pending.",
+      "pull_request_state": "OPEN",
+      "head_sha": "1819047bd824b7e0301e1474b8e7617de55e8e42"
     },
     {
+      "checked_at": "2026-09-06T16:36:50.675Z",
       "id": "finance-mcp-skills",
-      "name": "Awesome Finance MCP \u2014 Skills section",
+      "name": "Awesome Finance MCP — Skills section",
       "kind": "catalog_pr",
       "state": "submitted_review",
       "url": "https://github.com/BlockRunAI/awesome-finance-mcp/pull/65",
-      "detail": "Submitted in the existing Skills section as a local research workflow. This is not a new MCP-server listing."
+      "detail": "Submitted in the existing Skills section as a local research workflow. This is not a new MCP-server listing.",
+      "pull_request_state": "OPEN",
+      "head_sha": "778e882cf6b29577360d1c77fda9c6bb9aa5e05a"
     },
     {
+      "checked_at": "2026-09-06T16:36:50.675Z",
       "id": "ai-in-finance",
       "name": "Awesome AI in Finance",
       "kind": "catalog_pr",
       "state": "submitted_review",
       "url": "https://github.com/georgezouq/awesome-ai-in-finance/pull/249",
-      "detail": "Open contribution PR in the Skills section."
+      "detail": "Open contribution PR in the Skills section.",
+      "pull_request_state": "OPEN",
+      "head_sha": "cf7ec5fe2a9cdf6a2ffcf254e5241a2c691ea75f"
     },
     {
+      "checked_at": "2026-09-06T16:35:56.829Z",
       "id": "openagentskill",
       "name": "OpenAgentSkill",
       "kind": "public_form",
@@ -98,6 +124,7 @@
       "correction_detail": "Factual version and negation-handling correction requested; legitimate capability review remains applicable."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "listai",
       "name": "ListAi",
       "kind": "public_form",
@@ -106,6 +133,7 @@
       "detail": "Browser confirmation: Submission Received. Human review pending; no public listing verified."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "skillme",
       "name": "Skill Me",
       "kind": "public_form",
@@ -114,6 +142,7 @@
       "detail": "Browser confirmation: Submission received; skill is in the review queue. Pinned v0.1.0 source URL submitted."
     },
     {
+      "checked_at": "2026-09-06T16:35:57.497Z",
       "id": "skills-re",
       "name": "skills.re",
       "kind": "public_form",
@@ -122,6 +151,7 @@
       "detail": "Public page and documented API verified. Snapshot points to release commit 4b50c6d33f070d7a3db8a049e36cbded66cc55c7. The registry labels its own snapshot 1.0.0; the submitted GitHub release is v0.1.0."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "claude-skills-hub",
       "name": "Claude Skills Hub (independent directory)",
       "kind": "public_form",
@@ -130,6 +160,7 @@
       "detail": "Submit clicked once; the form reloaded without a receipt. Its public form posts to the same page and exposes no receipt logic. Server receipt is unconfirmed. Independent of Anthropic."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "futuretools",
       "name": "Future Tools",
       "kind": "public_form",
@@ -138,6 +169,7 @@
       "detail": "Complete form prepared. Submit attempt explicitly rejected until the CAPTCHA is completed. No submission received."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "launching-next",
       "name": "Launching Next",
       "kind": "public_form",
@@ -146,6 +178,7 @@
       "detail": "Free standard submission form prepared; its human Quick Check remains. Submit has not been clicked."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "openai-directory",
       "name": "OpenAI plugin directory",
       "kind": "publisher_portal",
@@ -154,6 +187,7 @@
       "detail": "Portal redirects to login. Release and reviewer materials are prepared; authentication, account eligibility, host reviewer cases and submission remain."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "anthropic-community",
       "name": "Anthropic plugin directory",
       "kind": "publisher_portal",
@@ -162,6 +196,7 @@
       "detail": "Portal shows login. Release and reviewer materials are prepared; authentication, account eligibility, submission and review remain."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "skillmd",
       "name": "SkillMD",
       "kind": "publisher_portal",
@@ -170,6 +205,7 @@
       "detail": "Free publishing requires sign-in. Complete skill archive is available; account eligibility and submission are unverified."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "product-hunt",
       "name": "Product Hunt",
       "kind": "publisher_portal",
@@ -178,6 +214,7 @@
       "detail": "Free launch route requires a genuine publisher account and onboarding. Publishing and homepage featuring are separate; account eligibility remains unchecked."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "resource-fyi",
       "name": "Resource.fyi",
       "kind": "publisher_portal",
@@ -186,6 +223,7 @@
       "detail": "Free Submit Resource route requires Google or GitHub sign-in. Post-login form fields are unverified."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "indexof-ai",
       "name": "IndexOf.AI",
       "kind": "publisher_portal",
@@ -194,12 +232,104 @@
       "detail": "Free Basic listing route requires sign-in. Account eligibility and submission are unverified."
     },
     {
+      "checked_at": "2026-09-06T13:20:44Z",
       "id": "openai-tools-hub",
       "name": "OpenAIToolsHub (independent directory)",
       "kind": "public_form",
       "state": "access_blocked",
       "url": "https://www.openaitoolshub.org/submit",
       "detail": "Local browser protection blocked the page. No information was entered or submitted; no protection was bypassed. Independent of OpenAI."
+    },
+    {
+      "id": "behisecc",
+      "name": "BehiSecc — Awesome Claude Skills",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/BehiSecc/awesome-claude-skills/pull/679",
+      "detail": "Submitted to Data & Analysis; maintainer review pending.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "2bae8d3df9906876f500aded27d5da283627ee48",
+      "batch": 2
+    },
+    {
+      "id": "composio",
+      "name": "ComposioHQ — Awesome Claude Skills",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills/pull/1840",
+      "detail": "Submitted to Data & Analysis; maintainer review pending. All three upstream checks passed; the ready-to-merge label is not an acceptance.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "8b6c5d18e5bc89b2acbf448642b4ab12749e0050",
+      "batch": 2
+    },
+    {
+      "id": "libukai",
+      "name": "libukai — Awesome Agent Skills",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/libukai/awesome-agent-skills/pull/150",
+      "detail": "Submitted to Curated Skills / Other Types; maintainer review pending. Entries synchronized across Chinese, English and Japanese READMEs; counted as one directory submission.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "bb2795005dd8c2c4a4cc9bde6191d3c901e6f870",
+      "batch": 2
+    },
+    {
+      "id": "ai-for-economists",
+      "name": "Awesome AI for Economists",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/hanlulong/awesome-ai-for-economists/pull/14",
+      "detail": "Submitted one README entry in Finance-Specific AI. Link, duplicate and diff checks passed; no upstream CI checks reported. Maintainer review pending.",
+      "checked_at": "2026-09-06T16:40:05.792863+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "55551cadbc1dfb4ab627205016d19a46eef80b6a",
+      "batch": 2
+    },
+    {
+      "id": "ai4finance",
+      "name": "Awesome AI4Finance",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/AI4Finance-Foundation/Awesome_AI4Finance/pull/26",
+      "detail": "Submitted one README entry in Data Sources. Link, duplicate and diff checks passed; no upstream CI checks reported. Maintainer review pending.",
+      "checked_at": "2026-09-06T16:40:05.792863+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "8eb31f4d3fdca7d93e08b48a80cf531b5313d553",
+      "batch": 2
+    },
+    {
+      "id": "chathome",
+      "name": "ChatHome Skills",
+      "kind": "public_form",
+      "state": "submitted_review",
+      "url": "https://skill.chathome.org/en/submit",
+      "detail": "Catalog check returned no match. New-repository form confirmed: Report received; a maintainer will review it. Reference #44. Public listing not yet verified.",
+      "checked_at": "2026-09-06T16:38:18.927Z",
+      "batch": 2
+    },
+    {
+      "id": "tipseason",
+      "name": "TipSeason",
+      "kind": "public_form",
+      "state": "submitted_review",
+      "url": "https://www.tipseason.com/ai-tools/submit-free",
+      "detail": "Browser redirected to Submission Received and confirmed the standard free queue. The site reports a 180+ day backlog; acceptance is not guaranteed. No paid upgrade or advertising was selected.",
+      "checked_at": "2026-09-06T16:38:18.927Z",
+      "batch": 2
     }
-  ]
+  ],
+  "latest_batch": {
+    "number": 2,
+    "checked_at": "2026-09-06T16:41:28.678288Z",
+    "new_submissions": 7,
+    "new_catalog_prs": 5,
+    "new_web_review_receipts": 2,
+    "existing_prs_corrected": 1,
+    "additional_downstream_listing_verified": 1,
+    "receipt_url": "https://beepboop2025.github.io/market-brief/distribution-wave2.json"
+  },
+  "count_scope": "Cumulative receipts from the two submission batches. The three public listings counted here are OpenAgentSkill, skills.re and the Chat2AnyLLM skills catalog; the earlier skills.sh listing is outside this count. Translated entries count once per directory. Listings and submissions do not count as users."
 }

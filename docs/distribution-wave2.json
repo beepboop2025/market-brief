@@ -1,0 +1,216 @@
+{
+  "schema": "market-brief.distribution-batch.v1",
+  "batch": 2,
+  "checked_at": "2026-09-06T16:41:28.678288Z",
+  "cost_usd": 0,
+  "new_submissions": [
+    {
+      "id": "behisecc",
+      "name": "BehiSecc — Awesome Claude Skills",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/BehiSecc/awesome-claude-skills/pull/679",
+      "detail": "Submitted to Data & Analysis; maintainer review pending.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "2bae8d3df9906876f500aded27d5da283627ee48",
+      "batch": 2
+    },
+    {
+      "id": "composio",
+      "name": "ComposioHQ — Awesome Claude Skills",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills/pull/1840",
+      "detail": "Submitted to Data & Analysis; maintainer review pending. All three upstream checks passed; the ready-to-merge label is not an acceptance.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "8b6c5d18e5bc89b2acbf448642b4ab12749e0050",
+      "batch": 2
+    },
+    {
+      "id": "libukai",
+      "name": "libukai — Awesome Agent Skills",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/libukai/awesome-agent-skills/pull/150",
+      "detail": "Submitted to Curated Skills / Other Types; maintainer review pending. Entries synchronized across Chinese, English and Japanese READMEs; counted as one directory submission.",
+      "checked_at": "2026-09-06T16:39:14.116082+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "bb2795005dd8c2c4a4cc9bde6191d3c901e6f870",
+      "batch": 2
+    },
+    {
+      "id": "ai-for-economists",
+      "name": "Awesome AI for Economists",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/hanlulong/awesome-ai-for-economists/pull/14",
+      "detail": "Submitted one README entry in Finance-Specific AI. Link, duplicate and diff checks passed; no upstream CI checks reported. Maintainer review pending.",
+      "checked_at": "2026-09-06T16:40:05.792863+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "55551cadbc1dfb4ab627205016d19a46eef80b6a",
+      "batch": 2
+    },
+    {
+      "id": "ai4finance",
+      "name": "Awesome AI4Finance",
+      "kind": "catalog_pr",
+      "state": "submitted_review",
+      "url": "https://github.com/AI4Finance-Foundation/Awesome_AI4Finance/pull/26",
+      "detail": "Submitted one README entry in Data Sources. Link, duplicate and diff checks passed; no upstream CI checks reported. Maintainer review pending.",
+      "checked_at": "2026-09-06T16:40:05.792863+00:00",
+      "pull_request_state": "OPEN",
+      "head_sha": "8eb31f4d3fdca7d93e08b48a80cf531b5313d553",
+      "batch": 2
+    },
+    {
+      "id": "chathome",
+      "name": "ChatHome Skills",
+      "kind": "public_form",
+      "state": "submitted_review",
+      "url": "https://skill.chathome.org/en/submit",
+      "detail": "Catalog check returned no match. New-repository form confirmed: Report received; a maintainer will review it. Reference #44. Public listing not yet verified.",
+      "checked_at": "2026-09-06T16:38:18.927Z",
+      "batch": 2
+    },
+    {
+      "id": "tipseason",
+      "name": "TipSeason",
+      "kind": "public_form",
+      "state": "submitted_review",
+      "url": "https://www.tipseason.com/ai-tools/submit-free",
+      "detail": "Browser redirected to Submission Received and confirmed the standard free queue. The site reports a 180+ day backlog; acceptance is not guaranteed. No paid upgrade or advertising was selected.",
+      "checked_at": "2026-09-06T16:38:18.927Z",
+      "batch": 2
+    }
+  ],
+  "counts": {
+    "number": 2,
+    "checked_at": "2026-09-06T16:41:28.678288Z",
+    "new_submissions": 7,
+    "new_catalog_prs": 5,
+    "new_web_review_receipts": 2,
+    "existing_prs_corrected": 1,
+    "additional_downstream_listing_verified": 1,
+    "receipt_url": "https://beepboop2025.github.io/market-brief/distribution-wave2.json"
+  },
+  "updates": [
+    {
+      "id": "chat2anyllm",
+      "state": "listed_partial",
+      "url": "https://github.com/Chat2AnyLLM/awesome-claude-skills/blob/main/README.md",
+      "detail": "Configuration PR merged. The downstream skills catalog now publicly lists Market Brief. The separate plugin catalog has a generation failure, so plugin indexing is still unverified."
+    },
+    {
+      "id": "developer-finance",
+      "state": "submitted_review",
+      "url": "https://github.com/mrtnrocks/awesome-developer-finance/pull/20",
+      "head_sha": "1819047bd824b7e0301e1474b8e7617de55e8e42",
+      "detail": "Updated the existing PR with direct browser and v0.1.0 release links requested in review. Formatting and links passed. Maintainer acceptance remains pending."
+    }
+  ],
+  "excluded_routes": [
+    {
+      "name": "VoltAgent/awesome-agent-skills",
+      "url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "reason": "Requires real community usage and rejects brand-new skills. Market Brief was created today; independent adoption is not established."
+    },
+    {
+      "name": "travisvn/awesome-claude-skills",
+      "url": "https://github.com/travisvn/awesome-claude-skills",
+      "reason": "Requires at least 10 stars and explicitly forbids AI-assisted submissions; Market Brief has 0 stars."
+    },
+    {
+      "name": "hesreallyhim/awesome-claude-code",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "reason": "Requires 14 days of project history with development or 100 stars, and recommendations must be submitted by a human through the web form, not PR or gh CLI."
+    },
+    {
+      "name": "JackyST0/awesome-agent-skills",
+      "url": "https://github.com/JackyST0/awesome-agent-skills",
+      "reason": "Community skills require 64 stars unless the maintainer grants an explicit exception. Market Brief has 0; no exception requested or assumed."
+    },
+    {
+      "name": "Prat011/awesome-llm-skills",
+      "url": "https://github.com/Prat011/awesome-llm-skills",
+      "reason": "Contribution guide requires verification across Claude Code, Codex and Gemini CLI; Gemini host verification is not established. Three other genuine, qualified targets were submitted."
+    },
+    {
+      "name": "skillmatic-ai/awesome-agent-skills",
+      "url": "https://github.com/skillmatic-ai/awesome-agent-skills",
+      "reason": "Current ready-to-use section curates libraries and collections rather than individual domain skills; no fitting section was added just to place this resource."
+    },
+    {
+      "name": "antontarasenko/awesome-economics",
+      "url": "https://github.com/antontarasenko/awesome-economics",
+      "reason": "Current GitHub repository metadata has has_pull_requests=false; REST pulls returns404. CONTRIBUTING.md welcomes the Links Sent by Readers PR queue, but that route is currently disabled. No fork, PR, issue, or email was created."
+    },
+    {
+      "name": "brandonhimpfen/awesome-finance",
+      "url": "https://github.com/brandonhimpfen/awesome-finance",
+      "reason": "PR checklist requires that own projects be notable or widely used. Market Brief is newly launched with no established external-adoption proof."
+    },
+    {
+      "name": "leoncuhk/awesome-quant-ai",
+      "url": "https://github.com/leoncuhk/awesome-quant-ai",
+      "reason": "CONTRIBUTING.md says brand-new repositories less than a few months old with low single-digit stars and no external validation usually do not fit. Market Brief was created today and has no external-validation proof."
+    },
+    {
+      "name": "quantmind/awesome-open-finance",
+      "url": "https://github.com/quantmind/awesome-open-finance",
+      "reason": "Contribution guidelines specify open finance and open banking. Market Brief provides macro research context rather than banking account/payment infrastructure."
+    },
+    {
+      "name": "RKiding/Awesome-finance-skills",
+      "url": "https://github.com/RKiding/Awesome-finance-skills",
+      "reason": "This repository distributes its own bundled alphaear skills; its README is not an external-resource directory and documents no external listing contribution route."
+    },
+    {
+      "name": "grananqvist/Awesome-Quant-Machine-Learning-Trading",
+      "url": "https://github.com/grananqvist/Awesome-Quant-Machine-Learning-Trading",
+      "reason": "The list focuses on financial machine-learning research, trading implementations, and reinforcement-learning environments. Market Brief is a deterministic macro research reader; no clearly matching existing category was established."
+    },
+    {
+      "name": "Agent Skills Market",
+      "url": "https://agent-skills.market/submit",
+      "reason": "Published submission price is $25; outside the free distribution batch."
+    },
+    {
+      "name": "TrustedSkills",
+      "url": "https://trustedskills.dev/submit",
+      "reason": "Requires top-level version and declared platform metadata absent from the immutable v0.1.0 skill. No incompatible package or platform claim submitted."
+    },
+    {
+      "name": "SkillMD.ai",
+      "url": "https://skillmd.ai/submit/",
+      "reason": "Form automatically creates an account. Not submitted in this no-new-account batch."
+    },
+    {
+      "name": "AgentStack",
+      "url": "https://www.agentstack.live/submit",
+      "reason": "Current public/browser submission page renders no usable form or controls."
+    },
+    {
+      "name": "Skills Directory",
+      "url": "https://www.skillsdirectory.com/submit",
+      "reason": "Publisher GitHub login required."
+    },
+    {
+      "name": "Awesome Skills",
+      "url": "https://www.awesomeskills.dev/en/submit",
+      "reason": "Submit remained disabled for the valid released skill URL in interactive and fresh browser checks, including ordinary keyboard entry. No submission was sent; no control was forced or bypassed."
+    }
+  ],
+  "repository_discovery_topics_added": [
+    "python",
+    "finance",
+    "economic-data",
+    "claude-code-plugin"
+  ],
+  "measurement": {
+    "external_adoption": "not_measured",
+    "test_installs_excluded": true,
+    "submission_or_listing_is_not_usage": true
+  }
+}
