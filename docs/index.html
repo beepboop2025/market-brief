@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Free, source-linked funding and liquidity briefs. See reported market context, compare changes, and keep data gaps visible. No account or API key.">
   <meta name="theme-color" content="#f4f2e9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Market Brief — funding and liquidity context, free">
+  <meta property="og:description" content="Build a brief, keep the source dates, and share a useful check. No account or API key.">
+  <meta property="og:url" content="https://beepboop2025.github.io/market-brief/">
+  <meta property="og:image" content="https://beepboop2025.github.io/market-brief/social-preview.png">
+  <meta property="og:image:alt" content="Market Brief browser app, ready to build a funding and liquidity check.">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.seiche.info; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
   <link rel="canonical" href="https://beepboop2025.github.io/market-brief/">
@@ -14,7 +21,7 @@
 <body>
   <header class="site-header wrap">
     <a class="wordmark" href="./" aria-label="Market Brief home"><span class="mark" aria-hidden="true">m<span>:</span></span> market brief</a>
-    <nav aria-label="Main navigation"><a href="#install">Add to your copilot</a><a href="https://github.com/beepboop2025/market-brief">Source ↗</a></nav>
+    <nav aria-label="Main navigation"><a href="#install">Add to your copilot</a><a href="partners.html">For publishers</a><a href="https://github.com/beepboop2025/market-brief">Source ↗</a></nav>
   </header>
   <main class="wrap">
     <section class="hero" aria-labelledby="title">
@@ -23,6 +30,7 @@
       <p class="intro">Your next market check, in one brief. Read funding and liquidity context, compare it with your last visit, and see where the evidence stops.</p>
       <div class="hero-actions"><button id="build" class="primary">Build my brief <span aria-hidden="true">↗</span></button><span class="quiet">No account. No API key. No broker connection.</span></div>
       <p class="scope-note">Covers selected funding benchmarks, capital-market context, and liquidity segments. <a href="coverage.md">See coverage</a></p>
+      <p id="shared-arrival" class="arrival" hidden></p>
     </section>
     <section class="desk" aria-labelledby="desk-title">
       <div class="desk-heading"><div><p class="eyebrow">The context desk</p><h2 id="desk-title">A little less noise.</h2></div><p id="clock" class="mono">Ready when you are</p></div>
@@ -37,25 +45,43 @@
           <button data-topic="capital-market" aria-pressed="false">Capital</button>
           <button data-topic="market-liquidity" aria-pressed="false">Liquidity</button>
         </div>
-        <label class="remember"><input id="remember" type="checkbox"> Remember on this device</label>
       </div>
-      <p id="baseline-note" class="baseline-note">First visit: no comparison baseline. Remember a brief to compare your next check.</p>
       <div id="cards" class="cards">
         <article class="placeholder-card"><span class="index">01 / FUNDING</span><h3>How is money priced?</h3><p>Selected overnight benchmarks, their published dates, and the source's reported state.</p></article>
         <article class="placeholder-card"><span class="index">02 / CAPITAL</span><h3>What is the wider context?</h3><p>Selected market observations alongside clearly labeled funding context.</p></article>
         <article class="placeholder-card"><span class="index">03 / LIQUIDITY</span><h3>Where are the gaps?</h3><p>Public segment coverage, source states, and what remains unavailable.</p></article>
       </div>
       </details>
-      <div class="brief-actions"><button id="copy" disabled>Copy brief</button><button id="download" disabled>Export JSON</button><button id="forget" class="text-button" hidden>Forget saved brief</button><span id="action-result" role="status" aria-live="polite"></span></div>
+      <div class="brief-actions"><button id="open-share" disabled>Share this brief</button><button id="copy" disabled>Copy brief</button><button id="download" disabled>Export JSON</button><button id="forget" class="text-button" hidden>Forget saved brief</button><span id="action-result" role="status" aria-live="polite"></span></div>
+      <div class="return-choice"><label class="remember"><input id="remember" type="checkbox"> Remember on this device</label><p id="baseline-note" class="baseline-note">Save this check to compare the next one. Your comparison stays in this browser.</p></div>
       <p class="evidence-note">Source-reported observations, not independently verified signals. A recent fetch does not make an old observation current. Partial or missing data does not mean calm markets.</p>
+      <details id="pilot" class="pilot">
+        <summary>Help improve Market Brief</summary>
+        <p>Tell us whether this check earns a place in your routine. An optional activity log can help you describe how you used it.</p>
+        <label class="pilot-choice"><input id="pilot-consent" type="checkbox"> Keep a small activity log on this device</label>
+        <p class="quiet">Counts and UTC use days only, kept for 35 days. No market values or identifier. Nothing is sent automatically. This choice is separate from remembering your comparison.</p>
+        <p id="pilot-summary" role="status" aria-live="polite">Off. No activity is being recorded.</p>
+        <div class="pilot-actions"><button id="pilot-export" disabled>Download my activity report</button><a href="https://github.com/beepboop2025/market-brief/issues/new?title=Market%20Brief%20feedback&amp;body=What%20were%20you%20trying%20to%20understand%3F%0A%0ADid%20the%20brief%20save%20you%20time%3F%0A%0AWhat%20was%20missing%3F%0A%0AOptional%3A%20attach%20your%20reviewed%20activity%20report.%20Do%20not%20include%20private%20financial%20information." target="_blank" rel="noopener noreferrer">Give feedback</a></div>
+        <p class="quiet">Review the report before attaching it to feedback. GitHub feedback is public and requires sign-in. Uncheck the option to delete the activity log.</p>
+      </details>
     </section>
     <section class="install" id="install" aria-labelledby="install-title">
       <div><p class="eyebrow">Fits your workflow</p><h2 id="install-title">Bring the brief<br>to your copilot.</h2><p>Use the same source-linked context in a compatible AI assistant. The Python helper also compares saved briefs, with no account or external AI model required.</p><p class="quiet">Market Brief is free. Your AI provider's subscription may cost separately.</p></div>
       <div class="install-panel"><h3>Install the Agent Skill</h3><pre><code>npx skills add https://github.com/beepboop2025/market-brief/tree/v0.1.0 --skill market-brief</code></pre><button id="copy-install">Copy install command</button><p><a href="https://github.com/beepboop2025/market-brief#install-in-your-ai-assistant">Claude Code, Codex, and Python instructions ↗</a></p><small>Owner-maintained marketplace. Reviewed platform directory listings are separate; <a href="distribution.json">see current status</a>.</small></div>
     </section>
+    <section class="publisher-invite"><div><h2>A useful addition to your research routine.</h2><p>Write a market newsletter, run a finance community, or build an AI tool? Add a free brief to the workflow your readers already use.</p></div><a href="partners.html">Get the embed and examples</a></section>
     <section class="closing"><h2>A useful check.<br>With room for uncertainty.</h2><p>Use this alongside your asset research. This first release does not supply ticker news, earnings calendars, portfolio advice, or trade execution. Sources can be delayed or incomplete. There is no billing or automatic paid conversion.</p></section>
   </main>
   <footer class="wrap"><a class="wordmark" href="./">market brief</a><p>Open research tools from <a href="https://liquilens.in/">Liquidity Lab</a>.</p><nav aria-label="Legal and support"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/beepboop2025/market-brief/issues">Feedback</a></nav></footer>
+  <dialog id="share-dialog" aria-labelledby="share-title">
+    <div class="share-heading"><div><p class="quiet">A dated preview for your readers</p><h2 id="share-title">Share this check</h2></div><button id="close-share" aria-label="Close sharing">Close</button></div>
+    <p id="share-scope" class="quiet"></p>
+    <div id="share-observations"></div>
+    <p class="share-note">The saved image captures this check. Links open the latest-view page, where the reader chooses when to fetch. Your saved comparison history is excluded.</p>
+    <div class="share-actions"><button id="native-share">Share…</button><a id="telegram-share" target="_blank" rel="noopener noreferrer">Open Telegram</a><button id="save-card">Save image</button><button id="copy-share">Copy preview</button></div>
+    <label class="share-link-label" for="share-link">Link to check the latest responses</label><div class="share-link-row"><input id="share-link" type="url" readonly><button id="copy-link">Copy link</button></div>
+    <p id="share-result" role="status" aria-live="polite"></p>
+  </dialog>
   <script type="module" src="app.js"></script>
 </body>
 </html>

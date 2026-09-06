@@ -16,9 +16,10 @@ usable context or a useful explicit gap, after excluding tests and retries.
 Count clients, persons and applications separately; IP addresses and user-agent
 strings do not identify distinct people reliably.
 
-The initial app deliberately has no cross-site analytics or identity service.
-We therefore cannot currently calculate global activated users or retention
-from it. Measure genuine skill installation events from the directory as
+The app has no cross-site analytics or identity service. Its voluntary local
+activity report records device-level counts and UTC use days only after consent.
+Reports are exported and shared by the reader; nothing is uploaded automatically.
+We therefore cannot calculate global activated users or retention from the app. Measure genuine skill installation events from the directory as
 installation evidence only. For early distribution tests, obtain explicit
 opt-in pilot feedback and aggregate usage receipts from independent integrators;
 do not manufacture traffic. Before making any aggregate MAU claim, implement
@@ -65,11 +66,13 @@ success. Free hosting should be capacity-bounded before broad distribution.
 1. A no-account browser example and a versioned, one-command skill install.
 2. Owner-maintained Claude and Codex marketplaces with verified consumer
    installs, plus a genuine skills.sh listing observation.
-3. Concrete reviewed-directory submission packages including screenshots,
+3. A publisher kit with a manual-fetch embed and copy-ready newsletter links,
+   plus dated share previews and optional local pilot reports.
+4. Concrete reviewed-directory submission packages including screenshots,
    repeatable positive/negative examples, privacy, terms, publisher identity,
    and truthful coverage. Account-owned verification and platform review are
    separate from owner-controlled publication.
-4. Opt-in integration pilots in existing trading-research workflows. Outreach
+5. Opt-in integration pilots in existing trading-research workflows. Outreach
    and public social messages require their own authorized recipients/channel;
    this launch does not send unsolicited messages or buy traffic.
 

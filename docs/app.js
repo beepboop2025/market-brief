@@ -1,15 +1,65 @@
 import { fetchBrief } from './data.js';
 import { orderCards } from './priorities.js';
+import { parseShareContext, createSharePreview, formatShareText, telegramShareUrl } from './sharing.js';
+import { createShareCard } from './share-card.js';
+import { ACTIVITY_KEY, createActivity, parseActivity, recordActivity, activityReport } from './activity.js';
 
 const $ = (id) => document.getElementById(id);
 const STORAGE_KEY = 'market-brief.browser.v1';
 const INSTALL = 'npx skills add https://github.com/beepboop2025/market-brief/tree/v0.1.0 --skill market-brief';
 let current = null;
 let baseline = null;
-let topic = 'all';
+const arrival = parseShareContext(location.search);
+let topic = arrival.topic;
+let activity = null;
+let sharePreview = null;
+const copyStates = new WeakMap();
 let busy = false;
 let lastRequest = 0;
 const topicNames = {'money-market':'Funding','capital-market':'Capital','market-liquidity':'Liquidity'};
+
+function describeActivity(message = '') {
+  $('pilot-consent').checked = Boolean(activity);
+  $('pilot-export').disabled = !activity;
+  const report = activity ? activityReport(activity) : null;
+  $('pilot-summary').textContent = message || (report
+    ? `${report.totals.checks} completed checks on ${report.distinct_check_days} UTC day${report.distinct_check_days === 1 ? '' : 's'}. Saved only on this device; nothing has been sent.`
+    : 'Off. No activity is being recorded.');
+}
+function record(event) {
+  if (!activity) return;
+  try {
+    // Re-read consent so another tab's opt-out cannot be overwritten.
+    const stored = parseActivity(localStorage.getItem(ACTIVITY_KEY));
+    if (!stored) { activity = null; describeActivity(); return; }
+    activity = recordActivity(stored, event);
+    localStorage.setItem(ACTIVITY_KEY, JSON.stringify(activity));
+    describeActivity();
+  } catch { activity = null; describeActivity('Recording stopped because this browser could not save activity. No data was sent.'); }
+}
+function downloadBlob(blob, name) {
+  const url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function readActivity() {
+  const raw = localStorage.getItem(ACTIVITY_KEY), parsed = parseActivity(raw);
+  if (parsed && JSON.stringify(parsed) !== raw) localStorage.setItem(ACTIVITY_KEY, JSON.stringify(parsed));
+  else if (raw && !parsed) localStorage.removeItem(ACTIVITY_KEY);
+  return parsed;
+}
+try { activity = readActivity(); } catch { activity = null; }
+describeActivity();
+window.addEventListener('storage', event => {
+  if (event.key === ACTIVITY_KEY || event.key === null) {
+    try { activity = readActivity(); } catch { activity = null; }
+    describeActivity();
+  }
+});
+document.querySelectorAll('[data-topic]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.topic === topic)));
+if (arrival.ref || topic !== 'all') {
+  $('shared-arrival').hidden = false;
+  $('shared-arrival').textContent = `${topicNames[topic] || 'Funding and liquidity'} context, ready to check. Build a brief to request the latest source responses. This link contains no saved market values.`;
+}
 
 function notice(message, error = false) {
   $('notice').textContent = message;
@@ -150,12 +200,13 @@ $('build').addEventListener('click',async()=>{
       ? 'The public sources could not be read. No current observations are being shown; try again later.'
       : `${current.cards.filter(c=>c.availability==='reported').length} reported observations · ${errors ? `${errors} source${errors>1?'s':''} unavailable. ` : 'All three sources responded. '}${comparedWith ? `${changed} value or source-state changes since the saved brief at ${date(comparedWith)}.` : 'First check: no baseline for changes.'} Coverage and freshness still depend on the source.`,errors>0);
     $('clock').textContent=`Retrieved ${date(current.fetched_at)}`;
-    $('copy').disabled=false;$('download').disabled=false;
+    $('copy').disabled=false;$('download').disabled=false;$('open-share').disabled=false;
+    record('checks');
     saveIfChosen();
   } catch(error) {
     current=null;$('cards').replaceChildren(text('p','The brief could not be built. No previous values are being presented as current.','placeholder-card'));
     $('highlights').hidden=true;$('observations').open=true;
-    $('copy').disabled=true;$('download').disabled=true;
+    $('copy').disabled=true;$('download').disabled=true;$('open-share').disabled=true;
     notice(`Could not build the brief. ${baseline ? 'A saved comparison may be incompatible; use “Forget saved brief” and try again.' : 'Please try again later.'}`,true);
   } finally {busy=false;$('build').disabled=false;$('build').innerText='Build my brief ↗';$('cards').removeAttribute('aria-busy');}
 });
@@ -169,23 +220,100 @@ $('remember').addEventListener('change',()=>{
   else forgetBaseline();
 });
 $('forget').addEventListener('click',forgetBaseline);
-async function copy(value,button) {
-  try{await navigator.clipboard.writeText(value);button.textContent='Copied';setTimeout(()=>button.textContent=button.id==='copy-install'?'Copy install command':'Copy brief',2000);}
-  catch{$('action-result').textContent='Clipboard unavailable. Use Export JSON or select the install command.';}
+async function copy(value, button, result = $('action-result')) {
+  if (!copyStates.has(button)) copyStates.set(button, {label: button.textContent, timer: null});
+  const state = copyStates.get(button);
+  try {
+    await navigator.clipboard.writeText(value); button.textContent = 'Copied';
+    result.textContent = 'Copied. Nothing has been sent.';
+    clearTimeout(state.timer);
+    state.timer = setTimeout(() => button.textContent = state.label, 2000); return true;
+  } catch { result.textContent = 'Clipboard unavailable. Select the visible link or use an export.'; return false; }
 }
-$('copy').addEventListener('click',()=>{
+$('copy').addEventListener('click',async()=>{
   if(!current)return;
-  const lines=['Market Brief',`Retrieved: ${current.fetched_at}`,'Source-reported funding and liquidity context; not trading advice.',''];
-  for(const h of highlightEntries()) lines.push(h.text,h.detail,h.source||'Source unavailable','');
-  const cards=orderCards(current.cards).filter(c=>topic==='all'||c.topic===topic).slice(0,8);
-  lines.push(`Selected observations (${cards.length} of ${current.cards.length}; full detail in Export JSON):`);
-  for(const c of cards) lines.push(`${c.label}: ${displayValue(c)} ${c.unit||''}`,`Source reports ${c.state||'unknown'} · observation ${c.observed_at||'not reported'}`,changeText(c),c.source_url,'');
-  lines.push('Coverage is partial. Retrieval does not independently verify freshness or rights.','https://beepboop2025.github.io/market-brief/');
-  copy(lines.join('\n'),$('copy'));
+  if (await copy(formatShareText(createSharePreview(current, topic)), $('copy'))) record('copies');
 });
 $('copy-install').addEventListener('click',()=>copy(INSTALL,$('copy-install')));
 $('download').addEventListener('click',()=>{
   if(!current)return;
-  const url=URL.createObjectURL(new Blob([JSON.stringify(current,null,2)],{type:'application/json'}));
-  const a=document.createElement('a');a.href=url;a.download=`market-brief-${current.fetched_at.slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  downloadBlob(new Blob([JSON.stringify(current,null,2)],{type:'application/json'}), `market-brief-${current.fetched_at.slice(0,10)}.json`);
+});
+
+$('open-share').addEventListener('click', () => {
+  if (!current) return;
+  sharePreview = createSharePreview(current, topic);
+  $('share-title').textContent = sharePreview.title;
+  $('share-scope').textContent = `Retrieved ${date(sharePreview.generatedAt)}. Showing ${sharePreview.observations.length} of ${sharePreview.total} observations: ${sharePreview.reported} reported, ${sharePreview.unavailable} unavailable, ${sharePreview.withheld} withheld.`;
+  $('share-observations').replaceChildren();
+  for (const observation of sharePreview.observations) {
+    const row = document.createElement('article'); row.className = 'share-observation';
+    row.append(text('h3', observation.label), text('p', `${displayValue(observation)}${observation.availability === 'reported' ? ' ' + observation.unit : ''}`, 'share-value'),
+      text('p', `Observed ${date(observation.observed_at)} · Source reports ${observation.state}`, 'quiet'),
+      text('p', `Source generated ${date(observation.source_generated_at)}`, 'quiet'));
+    const source = link('Read source', observation.source_url), original = link('Original publisher', observation.original_url);
+    if (source) row.append(source); if (original) row.append(original);
+    $('share-observations').append(row);
+  }
+  $('share-link').value = sharePreview.url;
+  $('telegram-share').href = telegramShareUrl(sharePreview);
+  $('native-share').hidden = typeof navigator.share !== 'function';
+  $('share-result').textContent = '';
+  $('share-dialog').showModal();
+});
+$('close-share').addEventListener('click', () => $('share-dialog').close());
+$('native-share').addEventListener('click', async () => {
+  if (!sharePreview || typeof navigator.share !== 'function') return;
+  record('share_intents');
+  try {
+    await navigator.share({title: sharePreview.title, text: formatShareText(sharePreview), url: sharePreview.url});
+    $('share-result').textContent = 'Sharing dialog completed. Delivery is not confirmed by this app.';
+  } catch (error) {
+    $('share-result').textContent = error.name === 'AbortError' ? 'Sharing cancelled.' : 'Sharing is unavailable here. Copy the link or save the image.';
+  }
+});
+$('telegram-share').addEventListener('click', () => record('share_intents'));
+$('copy-share').addEventListener('click', async () => {
+  if (sharePreview && await copy(formatShareText(sharePreview), $('copy-share'), $('share-result'))) record('copies');
+});
+$('copy-link').addEventListener('click', async () => {
+  if (sharePreview && await copy(sharePreview.url, $('copy-link'), $('share-result'))) record('copies');
+});
+$('save-card').addEventListener('click', async () => {
+  if (!sharePreview) return;
+  const preview = sharePreview;
+  $('save-card').disabled = true;
+  try {
+    const blob = await createShareCard(preview);
+    downloadBlob(blob, `market-brief-${(preview.generatedAt || new Date().toISOString()).slice(0, 10)}.png`);
+    record('cards_saved'); $('share-result').textContent = 'Image prepared for download. Source dates are included.';
+  } catch { $('share-result').textContent = 'The image could not be created. Copy the preview or link instead.'; }
+  finally { $('save-card').disabled = false; }
+});
+$('pilot-consent').addEventListener('change', () => {
+  if ($('pilot-consent').checked) {
+    try {
+      activity = createActivity(Date.now(), arrival.ref || 'direct');
+      localStorage.setItem(ACTIVITY_KEY, JSON.stringify(activity)); describeActivity();
+    } catch { activity = null; describeActivity('This browser cannot save an activity log. No activity is being recorded.'); }
+  } else {
+    activity = null;
+    try { localStorage.removeItem(ACTIVITY_KEY); describeActivity('Activity log deleted. No activity is being recorded.'); }
+    catch {
+      try { localStorage.setItem(ACTIVITY_KEY, '{}'); describeActivity('Activity log cleared. No activity is being recorded.'); }
+      catch { describeActivity('Recording stopped in this tab. Clear this site’s data in browser settings to remove the saved log.'); }
+    }
+  }
+});
+$('pilot-export').addEventListener('click', () => {
+  try {
+    activity = readActivity(); describeActivity();
+    if (!activity) return;
+    const report = activityReport(activity);
+    downloadBlob(new Blob([JSON.stringify(report, null, 2)], {type: 'application/json'}), `market-brief-activity-${report.as_of_day}.json`);
+  } catch { activity = null; describeActivity('The saved log could not be read. No activity report was exported.'); }
+});
+document.addEventListener('click', event => {
+  const source = event.target.closest?.('a');
+  if (source && source.closest('.card-source, .highlight, .share-observation')) record('source_opens');
 });

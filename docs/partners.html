@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Add Market Brief to your finance website, newsletter or AI workflow. Free source-linked funding, capital and liquidity context with visible dates and gaps.">
+  <meta name="theme-color" content="#f4f2e9">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; frame-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <link rel="canonical" href="https://beepboop2025.github.io/market-brief/partners.html">
+  <link rel="stylesheet" href="partners.css">
+  <title>For publishers &amp; builders — Market Brief</title>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="wordmark" href="./"><span class="mark" aria-hidden="true">m<span>:</span></span> market brief</a>
+    <nav aria-label="Main navigation"><a href="./">Build a brief</a><a href="https://github.com/beepboop2025/market-brief">Source ↗</a></nav>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">For publishers, communities &amp; builders</p>
+      <h1 id="title">A useful market check.<br><em>Right in your workflow.</em></h1>
+      <p class="intro">Give readers a small funding and liquidity desk, with the sources attached. Add the website widget, link from your newsletter, or bring the same context into an AI assistant.</p>
+      <div class="hero-links"><a href="#widget">Add the widget ↓</a><a href="#newsletter">Newsletter template ↓</a><a href="#workflow">Agent &amp; Python ↓</a></div>
+      <p class="quiet">Free early access. No account, API key, billing or automatic paid conversion.</p>
+    </section>
+    <section class="integration" id="widget" aria-labelledby="widget-title">
+      <div class="setup">
+        <p class="eyebrow">01 / On your website</p>
+        <h2 id="widget-title">One small context desk.</h2>
+        <p>Paste the iframe into a page that allows embedded HTML. Your reader clicks Build to request data. Loading the widget alone makes no market-data requests.</p>
+        <label for="topic">Choose the visible topic</label>
+        <select id="topic"><option value="all">Funding, capital &amp; liquidity</option><option value="money-market">Funding</option><option value="capital-market">Capital</option><option value="market-liquidity">Liquidity</option></select>
+        <label for="embed-code">Website embed · HTTPS</label>
+        <textarea id="embed-code" class="code" rows="10" readonly spellcheck="false"></textarea>
+        <button type="button" data-copy="embed-code">Copy embed code</button>
+        <p class="quiet">The widget is responsive; adjust the iframe height to suit your page. Its evidence list scrolls. A topic changes what is shown; every Build still reads the same three sources.</p>
+        <details><summary>Hosting and privacy details</summary><p>Your site must permit frames from <code>https://beepboop2025.github.io</code>. The widget needs JavaScript and access to <code>https://api.seiche.info</code>. Its links open in a new tab.</p><p>The embed sets no local storage and sends no analytics or parent messages. Hosting and source providers receive ordinary web requests. There are no automatic refreshes; manual checks are limited to once a minute. Loading a new page starts a new check with no comparison baseline.</p><p>No custom source URLs or tracking parameters are supported. This public hosted widget can evolve independently of the pinned v0.1.0 skill. Free early access does not promise permanent free hosting or uninterrupted upstream availability.</p></details>
+      </div>
+      <div class="preview-panel">
+        <div class="preview-label"><span class="eyebrow">Live preview</span><span>Click Build inside to try it</span></div>
+        <iframe id="preview" src="embed.html" title="Market Brief live widget preview" width="100%" height="700" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <p class="quiet">Real source requests after a click. No sample market values.</p>
+      </div>
+    </section>
+    <section class="integration secondary" id="newsletter" aria-labelledby="newsletter-title">
+      <div>
+        <p class="eyebrow">02 / In your newsletter</p>
+        <h2 id="newsletter-title">A link readers can use.</h2>
+        <p>Email clients generally block scripts and iframes. Use this short introduction and link to the browser brief instead. The same link works in a community post.</p>
+        <p>If you add an excerpt, keep the observation date, source link and relevant gaps beside it. A screenshot or copied value becomes a dated snapshot; it does not refresh inside an email.</p>
+      </div>
+      <div class="template-panel">
+        <label for="newsletter-code">Email-safe HTML introduction</label>
+        <textarea id="newsletter-code" class="code" rows="10" readonly spellcheck="false"></textarea>
+        <button type="button" data-copy="newsletter-code">Copy newsletter HTML</button>
+        <p class="quiet">Evergreen copy, with no invented current values. Review the final email in your publisher’s editor.</p>
+      </div>
+    </section>
+    <section class="integration secondary" id="workflow" aria-labelledby="workflow-title">
+      <div>
+        <p class="eyebrow">03 / In an existing workflow</p>
+        <h2 id="workflow-title">Let the context travel.</h2>
+        <p>Install the v0.1.0 Agent Skill in a compatible assistant, or run its Python helper locally. It reads the same selected sources and can compare a saved brief on your next manual check.</p>
+        <p>The standalone helper needs Python 3.10 or newer and no external AI model. Your assistant provider’s subscription may cost separately.</p>
+        <p><a href="https://github.com/beepboop2025/market-brief/tree/v0.1.0#try-it">Release instructions and comparison examples ↗</a></p>
+      </div>
+      <div class="template-panel">
+        <label for="skill-code">Agent Skill · v0.1.0</label>
+        <textarea id="skill-code" class="code" rows="3" readonly spellcheck="false"></textarea>
+        <button type="button" data-copy="skill-code">Copy skill command</button>
+        <label for="python-code" class="spaced">Standalone Python · v0.1.0</label>
+        <textarea id="python-code" class="code" rows="5" readonly spellcheck="false"></textarea>
+        <button type="button" data-copy="python-code">Copy Python commands</button>
+      </div>
+    </section>
+    <section class="reuse" aria-labelledby="reuse-title">
+      <div><p class="eyebrow">Keep the evidence intact</p><h2 id="reuse-title">Build with the context.</h2></div>
+      <div><p>The <a href="https://github.com/beepboop2025/market-brief/tree/v0.1.0/skills/market-brief">skill and Python helper</a> are the reusable integration today. There is no additional hosted Market Brief API or MCP server to register.</p><ul><li>Keep observation time, source generation time and retrieval time separate. Carry the original source links and distinguish observed data from derived context.</li><li>Retain partial, missing and withheld states. A successful request does not establish fresh observations or complete coverage; do not turn gaps into zeroes.</li><li>The code is MIT-licensed. Upstream data keeps its own rights and restrictions; public access is not blanket permission to republish it. Review those terms before publishing excerpts or native data.</li><li>Respect source publication cadence. Repeated calls do not create new evidence. No ticker catalysts, earnings calendar, holdings advice or order execution are supplied.</li></ul><p><a href="coverage.md">Coverage</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://github.com/beepboop2025/market-brief/issues">Integration feedback ↗</a></p></div>
+    </section>
+    <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+    <noscript><p class="notice">JavaScript is needed for the snippet controls. <a href="https://github.com/beepboop2025/market-brief/tree/v0.1.0">Read the release instructions on GitHub.</a></p></noscript>
+  </main>
+  <footer class="wrap"><a class="wordmark" href="./">market brief</a><p>Open research tools from <a href="https://liquilens.in/">Liquidity Lab</a>.</p><a href="./">Open the brief ↗</a></footer>
+  <script type="module" src="partners.js"></script>
+</body>
+</html>

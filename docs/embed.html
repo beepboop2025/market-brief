@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reader-initiated funding and liquidity brief with source dates and visible evidence gaps.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://api.seiche.info; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <link rel="stylesheet" href="embed.css">
+  <title>Market Brief — Embedded context desk</title>
+</head>
+<body>
+  <main class="widget">
+    <header class="widget-header">
+      <a class="wordmark" href="https://beepboop2025.github.io/market-brief/" target="_blank" rel="noopener noreferrer"><span class="mark" aria-hidden="true">m<span>:</span></span> market brief</a>
+      <span class="free">Free early access</span>
+    </header>
+    <section class="intro" aria-labelledby="widget-title">
+      <p class="eyebrow" id="topic-label">Funding, capital &amp; liquidity</p>
+      <h1 id="widget-title">Context, with <em>the sources.</em></h1>
+      <p>Selected observations. Published dates. Visible gaps.</p>
+      <button id="build" type="button">Build brief <span aria-hidden="true">↗</span></button>
+      <p class="fetch-note">Only a click reads the three public sources. No account or saved data.</p>
+    </section>
+    <div id="status" class="status" role="status" aria-live="polite">Ready when you are. No market data has been requested.</div>
+    <section id="evidence" aria-labelledby="evidence-title" hidden>
+      <div class="evidence-heading"><h2 id="evidence-title">The evidence</h2><p id="counts"></p></div>
+      <p id="retrieved" class="clock"></p>
+      <div id="cards" class="cards" role="region" aria-label="Scrollable source observations" tabindex="0"></div>
+      <details id="source-notes"><summary>Source availability and limits</summary><div id="source-errors"></div><ul id="limitations"></ul></details>
+    </section>
+    <footer>
+      <p>A recent fetch does not make an old observation current. Source-reported context, not trading advice.</p>
+      <nav aria-label="More about Market Brief"><a href="https://beepboop2025.github.io/market-brief/" target="_blank" rel="noopener noreferrer">Open full brief ↗</a><a href="https://beepboop2025.github.io/market-brief/partners.html" target="_blank" rel="noopener noreferrer">Add to your site</a></nav>
+    </footer>
+    <noscript><p class="status">JavaScript is needed to build this brief. <a href="https://beepboop2025.github.io/market-brief/">Open Market Brief</a> for other ways to use it.</p></noscript>
+  </main>
+  <script type="module" src="embed.js"></script>
+</body>
+</html>

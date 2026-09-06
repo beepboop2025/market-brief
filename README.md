@@ -38,6 +38,25 @@ An existing Financial Evidence packet can also be summarized offline:
 python3 skills/market-brief/scripts/market_brief.py --input packet.json --format markdown
 ```
 
+## Share and reuse a brief
+
+After building a brief, choose **Share this brief** to review up to three
+selected observations with their dates and source links. Copy the preview,
+save a dated PNG, or open your device’s sharing menu or Telegram. Shared links
+select a topic and invite the reader to check the latest source responses;
+they are not historical permalinks. Saved comparison history is excluded.
+
+[Publisher kit](https://beepboop2025.github.io/market-brief/partners.html)
+includes a website embed, newsletter link and Python/skill examples. The embed
+fetches only when its reader clicks and does not record activity or send
+messages to its parent page.
+
+Under **Help improve Market Brief**, an optional device-local log records use
+days and action counts for up to 35 days. It starts only after consent and is
+separate from the saved comparison. You can inspect/export it for voluntary
+feedback; nothing is automatically uploaded. These self-reported device
+counts do not establish aggregate users or retention.
+
 ## Install in your AI assistant
 
 Use the open Agent Skill in a compatible assistant:
