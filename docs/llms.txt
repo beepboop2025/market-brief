@@ -1,0 +1,12 @@
+# Market Brief
+
+> Free early-access funding, capital-market, and liquidity context for humans and AI copilots. Source-linked; no account, broker connection, or API key required for the helper.
+
+- [Try in browser](https://beepboop2025.github.io/market-brief/): fetch on request, optional local baseline.
+- [Agent Skill](https://github.com/beepboop2025/market-brief/tree/v0.1.0/skills/market-brief): Python 3.10+ helper with compact JSON, Markdown and local comparison.
+- [Install](https://github.com/beepboop2025/market-brief#install-in-your-ai-assistant): skills CLI, Claude Code and Codex owner-maintained marketplace.
+- [Coverage](https://beepboop2025.github.io/market-brief/coverage.md): exactly three public topic routes; partial coverage.
+- [Distribution](https://beepboop2025.github.io/market-brief/distribution.json): dated channel states.
+- [Privacy](https://beepboop2025.github.io/market-brief/privacy.html): no analytics scripts; optional local browser baseline; public providers see requests.
+
+No ticker-specific news, portfolio advice, stock picks, position sizing, execution or Carrier verification. Source status is source-reported; transport success is not freshness or evidence eligibility. Paid AI hosts may charge independently. No automatic conversion to a paid plan.

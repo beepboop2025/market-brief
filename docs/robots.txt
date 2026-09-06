@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://beepboop2025.github.io/market-brief/sitemap.xml

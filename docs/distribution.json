@@ -1,0 +1,61 @@
+{
+  "schema": "market-brief.distribution.v1",
+  "version": "0.1.0",
+  "checked_at": "2026-09-06T11:20:00Z",
+  "price": {
+    "status": "free_early_access",
+    "billing_enabled": false,
+    "automatic_paid_conversion": false,
+    "host_ai_fees": "May apply separately"
+  },
+  "channels": [
+    {
+      "id": "github",
+      "state": "prepared",
+      "url": "https://github.com/beepboop2025/market-brief",
+      "detail": "Public source and release are being validated."
+    },
+    {
+      "id": "browser",
+      "state": "prepared",
+      "url": "https://beepboop2025.github.io/market-brief/",
+      "detail": "Static browser app; public source retrieval on request."
+    },
+    {
+      "id": "claude-marketplace",
+      "state": "prepared",
+      "url": "https://github.com/beepboop2025/market-brief/blob/main/.claude-plugin/marketplace.json",
+      "detail": "Owner-maintained marketplace; does not imply reviewed directory acceptance."
+    },
+    {
+      "id": "codex-marketplace",
+      "state": "prepared",
+      "url": "https://github.com/beepboop2025/market-brief/blob/v0.1.0/.agents/plugins/marketplace.json",
+      "detail": "Owner-maintained marketplace; release pin will be verified."
+    },
+    {
+      "id": "skills-sh",
+      "state": "awaiting_index",
+      "url": "https://skills.sh/beepboop2025/market-brief/market-brief",
+      "detail": "Genuine CLI installations can trigger indexing; indexing has not been verified."
+    },
+    {
+      "id": "anthropic-community",
+      "state": "account_review_required",
+      "url": "https://code.claude.com/docs/en/plugins",
+      "detail": "A publisher submission and platform review are required; not submitted."
+    },
+    {
+      "id": "openai-directory",
+      "state": "account_review_required",
+      "url": "https://developers.openai.com/plugins/deploy/submission",
+      "detail": "Verified publisher, submission and review required; not submitted."
+    },
+    {
+      "id": "financial-evidence-mcp",
+      "state": "existing_dependency",
+      "url": "https://liquilens.in/mcp/financial-evidence",
+      "detail": "Existing public topics/route/fetch server; Market Brief is a local skill workflow, not a new server listing."
+    }
+  ]
+}

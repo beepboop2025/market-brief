@@ -1,0 +1,18 @@
+{
+  "name": "market-brief",
+  "version": "0.1.0",
+  "description": "Free funding and liquidity research briefs with source dates, explicit gaps, and local change comparison.",
+  "author": {
+    "name": "Liquidity Lab",
+    "url": "https://liquilens.in/"
+  },
+  "homepage": "https://beepboop2025.github.io/market-brief/",
+  "repository": "https://github.com/beepboop2025/market-brief",
+  "license": "MIT",
+  "keywords": [
+    "market-brief",
+    "financial-research",
+    "ai-copilot",
+    "liquidity"
+  ]
+}

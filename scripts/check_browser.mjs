@@ -1,0 +1,56 @@
+// Run with PLAYWRIGHT_MODULE pointing to an installed Playwright module.
+// Uses its own temporary browser context, without a personal browser profile.
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const base = process.env.MARKET_BRIEF_URL || 'http://127.0.0.1:8096/';
+const output = process.env.MARKET_BRIEF_ARTIFACTS || 'artifacts/browser';
+await fs.mkdir(output,{recursive:true});
+const browser = await chromium.launch({headless:true,channel:process.env.PLAYWRIGHT_CHANNEL});
+const context = await browser.newContext({viewport:{width:1440,height:1000},recordVideo:{dir:output,size:{width:1440,height:1000}}});
+const page = await context.newPage();
+const errors=[];const external=[];
+page.on('pageerror',e=>errors.push(e.message));
+page.on('request',r=>{if(r.url().startsWith('https://api.seiche.info/'))external.push(r.url());});
+try {
+  await page.goto(base,{waitUntil:'networkidle'});
+  await page.getByRole('button',{name:'Build my brief'}).waitFor();
+  assert.equal(external.length,0,'No source fetch before the user requests it');
+  assert.equal(await page.getByRole('checkbox',{name:'Remember on this device'}).isChecked(),false);
+  await page.screenshot({path:path.join(output,'desktop-initial.png'),fullPage:true});
+  await page.getByRole('button',{name:'Build my brief'}).click();
+  await page.waitForFunction(()=>!document.getElementById('build').disabled,{},{timeout:35000});
+  const notice=await page.locator('#notice').innerText();
+  assert.match(notice,/All three sources responded/,'All public sources should answer in the live smoke');
+  const total=await page.locator('.data-card').count();assert.ok(total>15);
+  await page.screenshot({path:path.join(output,'desktop-brief.png'),fullPage:true});
+  await page.locator('#observations-label').click();
+  assert.match(await page.locator('#baseline-note').innerText(),/No saved baseline/);
+  await page.getByRole('button',{name:'Funding',exact:true}).click();
+  assert.ok(await page.locator('.data-card').count()<total,'Topic filter reduces cards');
+  await page.getByRole('checkbox',{name:'Remember on this device'}).check();
+  assert.match(await page.locator('#baseline-note').innerText(),/Saved on this device/);
+  await page.reload({waitUntil:'networkidle'});
+  assert.equal(await page.locator('#remember').isChecked(),true);
+  await page.getByRole('button',{name:'Build my brief'}).click();
+  await page.waitForFunction(()=>!document.getElementById('build').disabled,{},{timeout:35000});
+  assert.match(await page.locator('#notice').innerText(),/since the saved brief/);
+  await page.evaluate(()=>{window.testRemoveItem=Storage.prototype.removeItem;Storage.prototype.removeItem=function(){throw new DOMException('Test storage denial','SecurityError');};});
+  await page.getByRole('button',{name:'Forget saved brief'}).click();
+  assert.match(await page.locator('#action-result').innerText(),/could not remove/);
+  assert.equal(await page.locator('#remember').isChecked(),true);
+  await page.evaluate(()=>{Storage.prototype.removeItem=window.testRemoveItem;delete window.testRemoveItem;});
+  await page.getByRole('button',{name:'Forget saved brief'}).click();
+  assert.equal(await page.locator('#remember').isChecked(),false);
+  await page.setViewportSize({width:390,height:844});
+  await page.screenshot({path:path.join(output,'mobile-brief.png'),fullPage:true});
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'No mobile horizontal overflow');
+  const download=page.waitForEvent('download');await page.getByRole('button',{name:'Export JSON'}).click();
+  const file=await download;await file.saveAs(path.join(output,'browser-brief.json'));
+  const exported=JSON.parse(await fs.readFile(path.join(output,'browser-brief.json'),'utf8'));
+  assert.equal(exported.schema,'market-brief.browser.v1');
+  assert.equal(errors.length,0,errors.join('\n'));
+  await fs.writeFile(path.join(output,'proof.json'),JSON.stringify({url:base,checked_at:new Date().toISOString(),cards:total,initial_notice:notice,source_requests:external.length,no_automatic_initial_fetch:true,remember_and_forget_passed:true,topic_filter_passed:true,mobile_no_overflow:true,export_passed:true,page_errors:errors},null,2));
+  console.log(JSON.stringify({ok:true,cards:total,artifacts:output}));
+} finally {await context.close();await browser.close();}

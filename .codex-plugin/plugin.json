@@ -1,0 +1,43 @@
+{
+  "name": "market-brief",
+  "version": "0.1.0",
+  "description": "Free source-linked funding and liquidity briefs with local comparisons for AI copilots.",
+  "author": {
+    "name": "Liquidity Lab",
+    "url": "https://liquilens.in/"
+  },
+  "homepage": "https://beepboop2025.github.io/market-brief/",
+  "repository": "https://github.com/beepboop2025/market-brief",
+  "license": "MIT",
+  "keywords": [
+    "market-brief",
+    "financial-research",
+    "ai-copilot",
+    "funding",
+    "liquidity"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Market Brief",
+    "shortDescription": "Market changes, with sources",
+    "longDescription": "Free market research context for your daily workflow. Read funding and liquidity observations, compare a previous brief, and keep gaps and source dates visible.",
+    "developerName": "Liquidity Lab",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Research"
+    ],
+    "websiteURL": "https://beepboop2025.github.io/market-brief/",
+    "privacyPolicyURL": "https://beepboop2025.github.io/market-brief/privacy.html",
+    "termsOfServiceURL": "https://beepboop2025.github.io/market-brief/terms.html",
+    "defaultPrompt": [
+      "Build a source-linked funding and liquidity brief.",
+      "What changed since my previous Market Brief?",
+      "Show the missing evidence in today's market context."
+    ],
+    "brandColor": "#166453",
+    "logo": "./assets/logo.svg",
+    "screenshots": ["./assets/screenshot1.png", "./assets/screenshot2.png"]
+  }
+}

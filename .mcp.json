@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "financial-evidence": {
+      "type": "http",
+      "url": "https://liquilens.in/mcp/financial-evidence"
+    }
+  }
+}

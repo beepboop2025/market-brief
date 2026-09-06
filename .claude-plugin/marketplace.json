@@ -1,0 +1,24 @@
+{
+  "name": "market-brief",
+  "owner": {
+    "name": "Liquidity Lab",
+    "url": "https://github.com/beepboop2025"
+  },
+  "metadata": {
+    "description": "Owner-maintained free Market Brief research workflow."
+  },
+  "plugins": [
+    {
+      "name": "market-brief",
+      "source": ".",
+      "version": "0.1.0",
+      "description": "Source-linked funding and liquidity briefs with explicit gaps.",
+      "author": {
+        "name": "Liquidity Lab"
+      },
+      "homepage": "https://beepboop2025.github.io/market-brief/",
+      "repository": "https://github.com/beepboop2025/market-brief",
+      "license": "MIT"
+    }
+  ]
+}
