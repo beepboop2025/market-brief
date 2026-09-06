@@ -8,7 +8,8 @@ withheld evidence alongside the reported observations. No account, broker
 connection, API key, or LLM subscription is needed for the Python helper or web app.
 
 [Open the free brief](https://beepboop2025.github.io/market-brief/) ·
-[Source and coverage](docs/coverage.md) · [Distribution status](docs/distribution.json)
+[Source and coverage](docs/coverage.md) ·
+[Distribution status](https://beepboop2025.github.io/market-brief/submissions.html)
 
 ## Try it
 
