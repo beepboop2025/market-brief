@@ -9,7 +9,8 @@ connection, API key, or LLM subscription is needed for the Python helper or web 
 
 [Open the free brief](https://beepboop2025.github.io/market-brief/) ·
 [Source and coverage](docs/coverage.md) ·
-[Distribution status](https://beepboop2025.github.io/market-brief/submissions.html)
+[Distribution status](https://beepboop2025.github.io/market-brief/submissions.html) ·
+[Browser release verification](https://beepboop2025.github.io/market-brief/browser-release.json)
 
 ## Try it
 

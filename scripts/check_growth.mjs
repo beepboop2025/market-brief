@@ -113,12 +113,15 @@ try {
   await page.locator('#close-share').click();
   await page.screenshot({path: path.join(output, 'mobile-unavailable.png'), fullPage: true});
   assert.equal(errors.length, 0, errors.join('\n'));
-  assert.ok(requests.every(url => url.startsWith(base) || url.startsWith('https://api.seiche.info/')), 'No analytics or share-provider requests');
+  const unexpected = requests.filter(url => !url.startsWith(base) && !url.startsWith('https://api.seiche.info/'));
   const proof = {url: base, checked_at: new Date().toISOString(), source_requests: sources().length,
     share_preview: true, image_download: true, native_cancellation: true, telegram_composer_checked_without_sending: true,
     no_preconsent_activity: true, no_retroactive_activity: true, pilot_export: true, independent_opt_out: true,
     cross_tab_opt_out: true, arrival_no_autofetch: true, unavailable_sources: true, mobile_no_overflow: true,
-    no_remote_telemetry: true, page_errors: errors};
+    functional_checks: 'passed', network_check: unexpected.length ? 'failed' : 'passed',
+    unexpected_request_count: unexpected.length,
+    no_remote_telemetry: unexpected.length ? null : true, page_errors: errors};
   await fs.writeFile(path.join(output, 'proof.json'), JSON.stringify(proof, null, 2) + '\n');
   console.log(JSON.stringify(proof));
+  assert.equal(unexpected.length, 0, 'Unexpected network requests; see the separate network check in proof.json');
 } finally {await context.close(); await browser.close();}

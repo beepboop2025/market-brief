@@ -1,7 +1,7 @@
 {
   "schema": "market-brief.distribution.v1",
   "version": "0.1.0",
-  "checked_at": "2026-09-06T13:20:44Z",
+  "checked_at": "2026-09-06T16:17:02.311324Z",
   "price": {
     "status": "free_early_access",
     "billing_enabled": false,
@@ -13,175 +13,219 @@
       "id": "github",
       "state": "live",
       "url": "https://github.com/beepboop2025/market-brief",
-      "detail": "Public v0.1.0 source and two release archives verified; downloaded bytes match reproducible packages."
+      "detail": "Public v0.1.0 source and two release archives verified; downloaded bytes match reproducible packages.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "browser",
       "state": "live",
       "url": "https://beepboop2025.github.io/market-brief/",
-      "detail": "Public desktop and mobile smoke passed against all three public sources; nine served files match release source."
+      "detail": "Sharing, dated PNG export and optional local pilot reports deployed. Public functional checks passed; 17 changed public files match application source. Local browser security injection prevents a clean public network allowlist result; see browser release proof.",
+      "checked_at": "2026-09-06T16:17:02.311324Z",
+      "verification_url": "https://beepboop2025.github.io/market-brief/browser-release.json"
     },
     {
       "id": "claude-marketplace",
       "state": "live",
       "url": "https://github.com/beepboop2025/market-brief/blob/main/.claude-plugin/marketplace.json",
-      "detail": "Owner-maintained marketplace; real Claude Code consumer installation passed. Reviewed directory acceptance is separate."
+      "detail": "Owner-maintained marketplace; real Claude Code consumer installation passed. Reviewed directory acceptance is separate.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "codex-marketplace",
       "state": "live",
       "url": "https://github.com/beepboop2025/market-brief/blob/v0.1.0/.agents/plugins/marketplace.json",
-      "detail": "Owner-maintained marketplace; real Codex installation resolved v0.1.0 and matched the tested helper."
+      "detail": "Owner-maintained marketplace; real Codex installation resolved v0.1.0 and matched the tested helper.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "skills-sh",
       "state": "listed",
       "url": "https://www.skills.sh/beepboop2025/market-brief/market-brief",
-      "detail": "Public directory page shows Market Brief content and first-seen Today. One internal CLI installation passed; it is excluded from external traction."
+      "detail": "Public directory page shows Market Brief content and first-seen Today. One internal CLI installation passed; it is excluded from external traction.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "anthropic-community",
       "state": "awaiting_login",
       "url": "https://platform.claude.com/plugins/submit",
-      "detail": "Portal shows login. Release and reviewer materials are prepared; authentication, account eligibility, submission and review remain."
+      "detail": "Portal shows login. Release and reviewer materials are prepared; authentication, account eligibility, submission and review remain.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "openai-directory",
       "state": "awaiting_login",
       "url": "https://platform.openai.com/plugins",
-      "detail": "Portal redirects to login. Release and reviewer materials are prepared; authentication, account eligibility, host reviewer cases and submission remain."
+      "detail": "Portal redirects to login. Release and reviewer materials are prepared; authentication, account eligibility, host reviewer cases and submission remain.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "financial-evidence-mcp",
       "state": "existing_dependency",
       "url": "https://liquilens.in/mcp/financial-evidence",
-      "detail": "Existing public topics/route/fetch server; Market Brief is a local skill workflow, not a new server listing."
+      "detail": "Existing public topics/route/fetch server; Market Brief is a local skill workflow, not a new server listing.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "liquidity-lab-marketplaces",
       "state": "live",
       "url": "https://github.com/beepboop2025/financial-evidence-skills/pull/16",
-      "detail": "Merged into both existing Liquidity Lab catalogs at f27aa35b797139c42a37fe8a87eda5a8542ccbe1. Market Brief independently pins v0.1.0; existing Financial Evidence entries are preserved."
+      "detail": "Merged into both existing Liquidity Lab catalogs at f27aa35b797139c42a37fe8a87eda5a8542ccbe1. Market Brief independently pins v0.1.0; existing Financial Evidence entries are preserved.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "chat2anyllm",
       "state": "accepted_pending_index",
       "url": "https://github.com/Chat2AnyLLM/awesome-repo-configs/pull/165",
-      "detail": "PR merged; both source configuration entries are present. Downstream searchable listings are not yet verified live."
+      "detail": "PR merged; both source configuration entries are present. Downstream searchable listings are not yet verified live.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "ccplugins",
       "state": "submitted_review",
       "url": "https://github.com/ccplugins/awesome-claude-code-plugins/pull/451",
-      "detail": "Open contribution PR; maintainer review pending."
+      "detail": "Open contribution PR; maintainer review pending.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "agent-skill-index",
       "state": "submitted_review",
       "url": "https://github.com/heilcheng/awesome-agent-skills/pull/475",
-      "detail": "Open contribution PR; preview deployment requires maintainer authorization."
+      "detail": "Open contribution PR; preview deployment requires maintainer authorization.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "awesome-quant",
       "state": "submitted_review",
       "url": "https://github.com/wilsonfreitas/awesome-quant/pull/639",
-      "detail": "Open contribution PR; validation and PR review checks passed."
+      "detail": "Open contribution PR; validation and PR review checks passed.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "investing-tools",
       "state": "submitted_review",
       "url": "https://github.com/Jera-Value/awesome-investing-tools-and-software-directory/pull/42",
-      "detail": "Open contribution PR; generated directory check passed."
+      "detail": "Open contribution PR; generated directory check passed.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "developer-finance",
       "state": "submitted_review",
       "url": "https://github.com/mrtnrocks/awesome-developer-finance/pull/20",
-      "detail": "Open contribution PR; maintainer review pending."
+      "detail": "Open contribution PR; maintainer review pending.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "finance-mcp-skills",
       "state": "submitted_review",
       "url": "https://github.com/BlockRunAI/awesome-finance-mcp/pull/65",
-      "detail": "Submitted in the existing Skills section as a local research workflow. This is not a new MCP-server listing."
+      "detail": "Submitted in the existing Skills section as a local research workflow. This is not a new MCP-server listing.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "ai-in-finance",
       "state": "submitted_review",
       "url": "https://github.com/georgezouq/awesome-ai-in-finance/pull/249",
-      "detail": "Open contribution PR in the Skills section."
+      "detail": "Open contribution PR in the Skills section.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "openagentskill",
       "state": "listed_restricted",
       "url": "https://www.openagentskill.com/skills/beepboop2025-market-brief-market-brief",
-      "detail": "Public community listing verified. Ownership is unverified; the site labels it Sandbox only and blocks automatic installation. This is not a verified endorsement."
+      "detail": "Public community listing verified. Ownership is unverified; the site labels it Sandbox only and blocks automatic installation. This is not a verified endorsement.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "listai",
       "state": "submitted_review",
       "url": "https://listai.cc/submit",
-      "detail": "Browser confirmation: Submission Received. Human review pending; no public listing verified."
+      "detail": "Browser confirmation: Submission Received. Human review pending; no public listing verified.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "skillme",
       "state": "submitted_review",
       "url": "https://skillme.dev/submit",
-      "detail": "Browser confirmation: Submission received; skill is in the review queue. Pinned v0.1.0 source URL submitted."
+      "detail": "Browser confirmation: Submission received; skill is in the review queue. Pinned v0.1.0 source URL submitted.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "skills-re",
       "state": "listed",
       "url": "https://skills.re/skills/beepboop2025/market-brief/market-brief",
-      "detail": "Public page and documented API verified. Snapshot points to release commit 4b50c6d33f070d7a3db8a049e36cbded66cc55c7. The registry labels its own snapshot 1.0.0; the submitted GitHub release is v0.1.0."
+      "detail": "Public page and documented API verified. Snapshot points to release commit 4b50c6d33f070d7a3db8a049e36cbded66cc55c7. The registry labels its own snapshot 1.0.0; the submitted GitHub release is v0.1.0.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "claude-skills-hub",
       "state": "attempted_unconfirmed",
       "url": "https://www.claudeskillguide.com/submit.html",
-      "detail": "Submit clicked once; the form reloaded without a receipt. Its public form posts to the same page and exposes no receipt logic. Server receipt is unconfirmed. Independent of Anthropic."
+      "detail": "Submit clicked once; the form reloaded without a receipt. Its public form posts to the same page and exposes no receipt logic. Server receipt is unconfirmed. Independent of Anthropic.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "futuretools",
       "state": "awaiting_human_check",
       "url": "https://futuretools.io/submit-a-tool",
-      "detail": "Complete form prepared. Submit attempt explicitly rejected until the CAPTCHA is completed. No submission received."
+      "detail": "Complete form prepared. Submit attempt explicitly rejected until the CAPTCHA is completed. No submission received.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "launching-next",
       "state": "awaiting_human_check",
       "url": "https://www.launchingnext.com/submit/",
-      "detail": "Free standard submission form prepared; its human Quick Check remains. Submit has not been clicked."
+      "detail": "Free standard submission form prepared; its human Quick Check remains. Submit has not been clicked.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "skillmd",
       "state": "awaiting_login",
       "url": "https://skillmd.com/publish",
-      "detail": "Free publishing requires sign-in. Complete skill archive is available; account eligibility and submission are unverified."
+      "detail": "Free publishing requires sign-in. Complete skill archive is available; account eligibility and submission are unverified.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "product-hunt",
       "state": "awaiting_login",
       "url": "https://www.producthunt.com/posts/new",
-      "detail": "Free launch route requires a genuine publisher account and onboarding. Publishing and homepage featuring are separate; account eligibility remains unchecked."
+      "detail": "Free launch route requires a genuine publisher account and onboarding. Publishing and homepage featuring are separate; account eligibility remains unchecked.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "resource-fyi",
       "state": "awaiting_login",
       "url": "https://resource.fyi/",
-      "detail": "Free Submit Resource route requires Google or GitHub sign-in. Post-login form fields are unverified."
+      "detail": "Free Submit Resource route requires Google or GitHub sign-in. Post-login form fields are unverified.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "indexof-ai",
       "state": "awaiting_login",
       "url": "https://indexof.ai/submit",
-      "detail": "Free Basic listing route requires sign-in. Account eligibility and submission are unverified."
+      "detail": "Free Basic listing route requires sign-in. Account eligibility and submission are unverified.",
+      "checked_at": "2026-09-06T13:20:44Z"
     },
     {
       "id": "openai-tools-hub",
       "state": "access_blocked",
       "url": "https://www.openaitoolshub.org/submit",
-      "detail": "Local browser protection blocked the page. No information was entered or submitted; no protection was bypassed. Independent of OpenAI."
+      "detail": "Local browser protection blocked the page. No information was entered or submitted; no protection was bypassed. Independent of OpenAI.",
+      "checked_at": "2026-09-06T13:20:44Z"
+    },
+    {
+      "id": "publisher-kit",
+      "state": "live",
+      "url": "https://beepboop2025.github.io/market-brief/partners.html",
+      "checked_at": "2026-09-06T16:17:02.311324Z",
+      "detail": "Copy-ready website embed, newsletter HTML link and version-pinned Python/skill examples. Public iframe functional checks passed; no automatic source fetch or storage."
+    },
+    {
+      "id": "financial-evidence-homepage",
+      "state": "live",
+      "url": "https://beepboop2025.github.io/financial-evidence-skills/",
+      "checked_at": "2026-09-06T16:17:02.311324Z",
+      "detail": "Browser and publisher-kit links merged in PR 17. Public homepage bytes exactly match merge e17513a00ecc8058101262c55879c268c9c2ec8a."
     }
   ],
   "release_commit": "4b50c6d33f070d7a3db8a049e36cbded66cc55c7",
@@ -194,5 +238,7 @@
     "million_scale_outcome": "not_established"
   },
   "submissions_url": "https://beepboop2025.github.io/market-brief/submissions.html",
-  "submissions_data_url": "https://beepboop2025.github.io/market-brief/submissions.json"
+  "submissions_data_url": "https://beepboop2025.github.io/market-brief/submissions.json",
+  "browser_build_id": "2026-09-06-sharing",
+  "browser_verification_url": "https://beepboop2025.github.io/market-brief/browser-release.json"
 }
