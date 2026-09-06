@@ -1,0 +1,135 @@
+{
+  "schema": "market-brief.release-proof.v1",
+  "checked_at": "2026-09-06T11:46:18.749346Z",
+  "version": "0.1.0",
+  "release_commit": "4b50c6d33f070d7a3db8a049e36cbded66cc55c7",
+  "release_url": "https://github.com/beepboop2025/market-brief/releases/tag/v0.1.0",
+  "tests": {
+    "python": 31,
+    "javascript": 23,
+    "result": "passed",
+    "github_actions_url": "https://github.com/beepboop2025/market-brief/actions/runs/34030880930"
+  },
+  "public_browser": {
+    "url": "https://beepboop2025.github.io/market-brief/",
+    "checked_at": "2026-09-06T11:41:58.236Z",
+    "cards": 26,
+    "initial_notice": "21 reported observations \u00b7 All three sources responded. First check: no baseline for changes. Coverage and freshness still depend on the source.",
+    "source_requests": 6,
+    "no_automatic_initial_fetch": true,
+    "remember_and_forget_passed": true,
+    "topic_filter_passed": true,
+    "mobile_no_overflow": true,
+    "export_passed": true,
+    "page_errors": []
+  },
+  "public_files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "e90822ca4aad23325c8a57fa7552485b7946a009b570ee9fac76c27804c43e4d",
+      "matches_release": true
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "sha256": "3c0bee819cb1391a85b39fc3a35334ac57c5aaca177962e8d559650b3cbba35e",
+      "matches_release": true
+    },
+    {
+      "file": "data.js",
+      "status": 200,
+      "sha256": "45b59c72647b78b34c6c07aced50d76384f2d588d2da205965d11e1f43c82395",
+      "matches_release": true
+    },
+    {
+      "file": "priorities.js",
+      "status": 200,
+      "sha256": "98373d390146a7721eaa6ce84c8ae9f8926bb16d5dde1c2b0616e1ef99a53bda",
+      "matches_release": true
+    },
+    {
+      "file": "styles.css",
+      "status": 200,
+      "sha256": "521ae1be0c5911bbddf4777401f60937000d669da352e17ef144070ccae59bde",
+      "matches_release": true
+    },
+    {
+      "file": "privacy.html",
+      "status": 200,
+      "sha256": "b9db46cec2d61059a138952240ce461044cb752e42469d9826975fce05e78777",
+      "matches_release": true
+    },
+    {
+      "file": "terms.html",
+      "status": 200,
+      "sha256": "a5cd1f576f74c5edd82c67286612c2bd87ebec54672ef61c725b63cbdc5386b2",
+      "matches_release": true
+    },
+    {
+      "file": "coverage.md",
+      "status": 200,
+      "sha256": "89400775830b22355ea564a3c536583abb3172e7711cbc431ddb5a47668777e5",
+      "matches_release": true
+    },
+    {
+      "file": "llms.txt",
+      "status": 200,
+      "sha256": "a89ba46e5b81d3c157261b4cf54737a20124cf67413fdcfc4569a2825f5a6c3e",
+      "matches_release": true
+    }
+  ],
+  "archives": {
+    "reproducible": true,
+    "remote_downloads_byte_identical": true,
+    "sha256": {
+      "market-brief-skill-0.1.0.zip": "29bfa0f045f2d2a3174b45c884e955a9a94c044a5b38b26e1d0b13334c19322a",
+      "market-brief-plugin-0.1.0.zip": "18b0ec1cee13697ab33aac5e98aaf2771f3d7d7cb6804515fa2ed802d2c2153b"
+    }
+  },
+  "consumer_installs": {
+    "codex": "passed",
+    "claude_code": "passed",
+    "skills_cli": "passed",
+    "helper_sha256": "946e4e9f91a29f830052d83271bc15784b497f525a402b17b55bc9b74ec67f50",
+    "installed_skill_execution": "passed_with_saved_public_packet",
+    "installed_skill_observations": 31,
+    "target_host_reviewer_cases": "prepared_not_run"
+  },
+  "liquidity_lab_catalog": {
+    "merge_commit": "f27aa35b797139c42a37fe8a87eda5a8542ccbe1",
+    "checks": [
+      {
+        "path": ".agents/plugins/marketplace.json",
+        "catalog": "liquidity-lab",
+        "plugins": [
+          "financial-evidence",
+          "market-brief"
+        ],
+        "market_brief_ref": "v0.1.0",
+        "matches_reviewed_files": true
+      },
+      {
+        "path": ".claude-plugin/marketplace.json",
+        "catalog": "liquidity-lab",
+        "plugins": [
+          "financial-evidence",
+          "market-brief"
+        ],
+        "market_brief_ref": "v0.1.0",
+        "matches_reviewed_files": true
+      }
+    ]
+  },
+  "github_tag_signature": {
+    "verified": false,
+    "reported_reason": "unknown_key",
+    "note": "Release archive identity is established by the tag commit, reproducible builds and matching remote bytes; a GitHub Verified signature is not claimed."
+  },
+  "traction": {
+    "external_adoption": "not_measured",
+    "test_installs_excluded": true,
+    "monthly_active_people_measurement_enabled": false,
+    "million_scale_outcome": "not_established"
+  }
+}

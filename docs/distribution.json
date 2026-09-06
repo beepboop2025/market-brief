@@ -1,7 +1,7 @@
 {
   "schema": "market-brief.distribution.v1",
   "version": "0.1.0",
-  "checked_at": "2026-09-06T11:20:00Z",
+  "checked_at": "2026-09-06T11:46:18.749346Z",
   "price": {
     "status": "free_early_access",
     "billing_enabled": false,
@@ -11,51 +11,66 @@
   "channels": [
     {
       "id": "github",
-      "state": "prepared",
+      "state": "live",
       "url": "https://github.com/beepboop2025/market-brief",
-      "detail": "Public source and release are being validated."
+      "detail": "Public v0.1.0 source and two release archives verified; downloaded bytes match reproducible packages."
     },
     {
       "id": "browser",
-      "state": "prepared",
+      "state": "live",
       "url": "https://beepboop2025.github.io/market-brief/",
-      "detail": "Static browser app; public source retrieval on request."
+      "detail": "Public desktop and mobile smoke passed against all three public sources; nine served files match release source."
     },
     {
       "id": "claude-marketplace",
-      "state": "prepared",
+      "state": "live",
       "url": "https://github.com/beepboop2025/market-brief/blob/main/.claude-plugin/marketplace.json",
-      "detail": "Owner-maintained marketplace; does not imply reviewed directory acceptance."
+      "detail": "Owner-maintained marketplace; real Claude Code consumer installation passed. Reviewed directory acceptance is separate."
     },
     {
       "id": "codex-marketplace",
-      "state": "prepared",
+      "state": "live",
       "url": "https://github.com/beepboop2025/market-brief/blob/v0.1.0/.agents/plugins/marketplace.json",
-      "detail": "Owner-maintained marketplace; release pin will be verified."
+      "detail": "Owner-maintained marketplace; real Codex installation resolved v0.1.0 and matched the tested helper."
     },
     {
       "id": "skills-sh",
-      "state": "awaiting_index",
-      "url": "https://skills.sh/beepboop2025/market-brief/market-brief",
-      "detail": "Genuine CLI installations can trigger indexing; indexing has not been verified."
+      "state": "listed",
+      "url": "https://www.skills.sh/beepboop2025/market-brief/market-brief",
+      "detail": "Public directory page shows Market Brief content and first-seen Today. One internal CLI installation passed; it is excluded from external traction."
     },
     {
       "id": "anthropic-community",
-      "state": "account_review_required",
-      "url": "https://code.claude.com/docs/en/plugins",
-      "detail": "A publisher submission and platform review are required; not submitted."
+      "state": "prepared_not_submitted",
+      "url": "https://platform.claude.com/plugins/submit",
+      "detail": "Submission materials prepared; authenticated publisher submission and review remain. Account eligibility is unchecked."
     },
     {
       "id": "openai-directory",
-      "state": "account_review_required",
-      "url": "https://developers.openai.com/plugins/deploy/submission",
-      "detail": "Verified publisher, submission and review required; not submitted."
+      "state": "prepared_not_submitted",
+      "url": "https://platform.openai.com/plugins",
+      "detail": "Five positive and three negative reviewer cases prepared; publisher verification, host review tests, submission and platform review remain. Account eligibility is unchecked."
     },
     {
       "id": "financial-evidence-mcp",
       "state": "existing_dependency",
       "url": "https://liquilens.in/mcp/financial-evidence",
       "detail": "Existing public topics/route/fetch server; Market Brief is a local skill workflow, not a new server listing."
+    },
+    {
+      "id": "liquidity-lab-marketplaces",
+      "state": "live",
+      "url": "https://github.com/beepboop2025/financial-evidence-skills/pull/16",
+      "detail": "Merged into both existing Liquidity Lab catalogs at f27aa35b797139c42a37fe8a87eda5a8542ccbe1. Market Brief independently pins v0.1.0; existing Financial Evidence entries are preserved."
     }
-  ]
+  ],
+  "release_commit": "4b50c6d33f070d7a3db8a049e36cbded66cc55c7",
+  "release_url": "https://github.com/beepboop2025/market-brief/releases/tag/v0.1.0",
+  "verification_url": "https://beepboop2025.github.io/market-brief/release-proof.json",
+  "traction": {
+    "external_adoption": "not_measured",
+    "test_installs_excluded": true,
+    "monthly_active_people_measurement_enabled": false,
+    "million_scale_outcome": "not_established"
+  }
 }
