@@ -26,6 +26,30 @@ cd market-brief
 python3 skills/market-brief/scripts/market_brief.py --format markdown
 ```
 
+## Keep a focused research routine
+
+In the browser, **Watch observation** adds a benchmark, capital-market reading,
+or liquidity segment to a watchboard of up to 12 observations. **My watchboard**,
+**Changes**, and **Evidence gaps** help you review a smaller set. A watched item
+that disappears stays visible as unavailable; an old value is never carried
+forward as current. Changes require the existing saved comparison, and gaps
+include stale, undated, withheld and incomparable evidence.
+
+Watch choices stay in the current tab until you enable **Remember my watchboard
+on this device**. That option stores observation IDs only, separately from the
+optional comparison baseline and activity log. Clear watchboard removes them.
+
+Choose **Prepare AI research handoff** to review the current filtered view with
+its source links, three kinds of timestamps, valid comparisons and evidence
+gaps. Copy it to your chosen assistant or download Markdown. The packet asks
+for an explanation, a countercase and verification questions; Market Brief
+does not contact an AI service. Your assistant's terms apply if you submit it.
+
+Continue with the existing [LiquiLens bank example](https://liquilens.in/start/?task=bank),
+[Seiche funding question](https://liquilens.in/start/?task=funding), or
+[Undertow exit example](https://liquilens.in/start/?task=exit). Bank evidence is
+additional research: it is not fetched or assessed by the three-source brief.
+
 Save a baseline only when you want a later comparison:
 
 ```bash
