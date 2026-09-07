@@ -2,7 +2,11 @@
 
 > Free early-access funding, capital-market, and liquidity context for humans and AI copilots. Source-linked; no account, broker connection, or API key required for the helper.
 
-- [Try in browser](https://beepboop2025.github.io/market-brief/): fetch on request, optional local baseline.
+- [Try in browser](https://beepboop2025.github.io/market-brief/): fetch on request, optional local baseline, watch up to 12 observations, and review changes or evidence gaps.
+- [Research handoff](https://beepboop2025.github.io/market-brief/#watch-title): preview and copy the selected observations, dates, comparisons and limits to a chosen AI assistant, or download Markdown. No AI provider is contacted by the app.
+- [LiquiLens bank example](https://liquilens.in/start/?task=bank): additional institution research; not included in the brief's source coverage.
+- [Seiche funding question](https://liquilens.in/start/?task=funding): inspect supporting funding evidence and counterevidence.
+- [Undertow exit example](https://liquilens.in/start/?task=exit): explore published BTC exit estimates by size.
 - [Agent Skill](https://github.com/beepboop2025/market-brief/tree/v0.1.0/skills/market-brief): Python 3.10+ helper with compact JSON, Markdown and local comparison.
 - [Install](https://github.com/beepboop2025/market-brief#install-in-your-ai-assistant): skills CLI, Claude Code and Codex owner-maintained marketplace.
 - [Coverage](https://beepboop2025.github.io/market-brief/coverage.md): exactly three public topic routes; partial coverage.

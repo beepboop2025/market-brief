@@ -3,12 +3,15 @@ import { orderCards } from './priorities.js';
 import { parseShareContext, createSharePreview, formatShareText, telegramShareUrl } from './sharing.js';
 import { createShareCard } from './share-card.js';
 import { ACTIVITY_KEY, createActivity, parseActivity, recordActivity, activityReport } from './activity.js';
+import { createWorkspace } from './workspace-ui.js';
 
 const $ = (id) => document.getElementById(id);
 const STORAGE_KEY = 'market-brief.browser.v1';
 const INSTALL = 'npx skills add https://github.com/beepboop2025/market-brief/tree/v0.1.0 --skill market-brief';
 let current = null;
 let baseline = null;
+let baselineStorageRaw = null;
+let baselineConsentPending = false;
 const arrival = parseShareContext(location.search);
 let topic = arrival.topic;
 let activity = null;
@@ -17,6 +20,7 @@ const copyStates = new WeakMap();
 let busy = false;
 let lastRequest = 0;
 const topicNames = {'money-market':'Funding','capital-market':'Capital','market-liquidity':'Liquidity'};
+const workspace = createWorkspace({getCurrent: () => current, renderCards: () => render(), recordCopy: () => record('copies'), isBusy: () => busy});
 
 function describeActivity(message = '') {
   $('pilot-consent').checked = Boolean(activity);
@@ -119,9 +123,10 @@ function renderHighlights() {
   }
 }
 function render() {
+  workspace.renderSummary(topic);
   if (!current) return;
   $('cards').replaceChildren();
-  const filtered = orderCards(current.cards).filter(card => topic === 'all' || card.topic === topic);
+  const filtered = workspace.select(orderCards(current.cards), topic);
   for (const card of filtered) {
     const article = document.createElement('article');
     article.className = `data-card ${['reported','withheld','unavailable'].includes(card.availability)?card.availability:'unavailable'}`;
@@ -137,9 +142,11 @@ function render() {
     article.append(top,text('h3',card.label),value,text('p',`Source reports: ${card.state||'not reported'}`,'card-state'));
     if(card.dayChange && Number.isFinite(card.dayChange.value) && card.availability === 'reported') article.append(text('p',`Publisher's one-observation change: ${card.dayChange.value > 0 ? '+' : ''}${card.dayChange.value} ${card.dayChange.unit}`,'card-state'));
     article.append(change,text('p',`Observation: ${date(card.observed_at)}`,'card-date'),sources);
+    article.append(workspace.watchButton(card));
     $('cards').append(article);
   }
-  if (!filtered.length) $('cards').append(text('p','No observations are available for this topic.','placeholder-card'));
+  workspace.appendMissing($('cards'));
+  if (!$('cards').children.length) $('cards').append(text('p','No observations match this view. Choose All observations to explore the brief, or watch an observation to follow it here.','placeholder-card'));
 }
 function describeBaseline() {
   $('forget').hidden = !baseline;
@@ -147,14 +154,23 @@ function describeBaseline() {
     ? `Saved on this device: ${date(baseline.fetched_at)}. Comparisons use observation values and dates, not the retrieval timestamp.`
     : 'No saved baseline. Remember a brief to compare your next check; a first visit cannot establish what changed.';
 }
-function saveIfChosen() {
+function saveIfChosen(explicit = false) {
   if (!$('remember').checked || !current) return;
   if (current.transport_status === 'unavailable') {
     $('action-result').textContent = 'All sources unavailable; the previous baseline was kept.';
     return;
   }
   try {
-    localStorage.setItem(STORAGE_KEY,JSON.stringify(current));
+    if (!explicit && !baselineConsentPending && localStorage.getItem(STORAGE_KEY) !== baselineStorageRaw) {
+      readBaseline();
+      if (!baseline) clearComparison();
+      describeBaseline();
+      $('action-result').textContent='The saved comparison changed in another tab. Its choice was preserved.';
+      return;
+    }
+    const raw = JSON.stringify(current);
+    localStorage.setItem(STORAGE_KEY,raw);
+    baselineStorageRaw = raw; baselineConsentPending = false;
     baseline = current;
     describeBaseline();
   } catch { $('action-result').textContent='This browser could not save the baseline.'; }
@@ -166,33 +182,55 @@ function forgetBaseline() {
     $('action-result').textContent='The browser could not remove the saved brief. Clear this site’s storage in browser settings.';
     return false;
   }
-  baseline=null;$('remember').checked=false;describeBaseline();
+  baseline=null;baselineStorageRaw=null;baselineConsentPending=false;$('remember').checked=false;clearComparison();describeBaseline();
   $('action-result').textContent='Saved baseline removed from this browser.';
   return true;
 }
-try {
+function readBaseline() {
   const stored = localStorage.getItem(STORAGE_KEY);
+  baseline=null;baselineStorageRaw=stored;baselineConsentPending=false;
   if (stored && stored.length <= 200000) {
     const parsed=JSON.parse(stored);
     if(parsed.schema==='market-brief.browser.v1' && Array.isArray(parsed.cards)) {
-      baseline=parsed; $('remember').checked=true;
+      baseline=parsed;
     }
   }
-} catch { baseline=null; }
+  $('remember').checked=Boolean(baseline);
+}
+function clearComparison() {
+  if (!current) return;
+  current = {...current, comparison_status:'no_baseline', cards:current.cards.filter(card=>card.state!=='NOT_RETURNED').map(card=>{
+    const {previousValue, previousUnit, delta, changeBasis, ...observation}=card;
+    return {...observation, changeKind:card.availability==='withheld'?'withheld':'no_baseline'};
+  })};
+  render();
+}
+try { readBaseline(); } catch { baseline=null; }
 describeBaseline();
+window.addEventListener('storage',event=>{
+  if(event.key!==STORAGE_KEY && event.key!==null)return;
+  try { readBaseline(); } catch { baseline=null;baselineConsentPending=false;$('remember').checked=false; }
+  if(!baseline)clearComparison();
+  describeBaseline();
+});
 
 $('build').addEventListener('click',async()=>{
   if(busy) return;
   if(Date.now()-lastRequest<60000){notice('Please allow a minute between checks. These sources update at their own publication cadence.');return;}
   busy=true;lastRequest=Date.now();$('build').disabled=true;$('build').textContent='Building your brief…';
+  workspace.clearHandoff();
   $('cards').setAttribute('aria-busy','true');$('action-result').textContent='';
   notice('Reading the three public sources. Their observation dates will stay visible.');
   try {
-    const comparedWith=baseline?.fetched_at;
+    try {
+      if (!baselineConsentPending && localStorage.getItem(STORAGE_KEY) !== baselineStorageRaw) { readBaseline(); describeBaseline(); }
+    } catch { baseline=null;baselineConsentPending=false;$('remember').checked=false;describeBaseline(); }
+    let comparedWith=baseline?.fetched_at;
     current=await fetchBrief({previous:baseline});
+    if (comparedWith && !baseline) { clearComparison(); comparedWith=null; }
     render();
     renderHighlights();
-    $('observations').open=false;
+    $('observations').open=workspace.revealAfterBuild();
     $('observations-label').textContent=`Inspect all ${current.cards.length} observations and comparison settings`;
     const errors=current.errors.length;
     const changed=current.cards.filter(c=>['value_changed','state_changed'].includes(c.changeKind)).length;
@@ -205,10 +243,11 @@ $('build').addEventListener('click',async()=>{
     saveIfChosen();
   } catch(error) {
     current=null;$('cards').replaceChildren(text('p','The brief could not be built. No previous values are being presented as current.','placeholder-card'));
+    workspace.renderSummary(topic);
     $('highlights').hidden=true;$('observations').open=true;
     $('copy').disabled=true;$('download').disabled=true;$('open-share').disabled=true;
     notice(`Could not build the brief. ${baseline ? 'A saved comparison may be incompatible; use “Forget saved brief” and try again.' : 'Please try again later.'}`,true);
-  } finally {busy=false;$('build').disabled=false;$('build').innerText='Build my brief ↗';$('cards').removeAttribute('aria-busy');}
+  } finally {busy=false;workspace.renderSummary(topic);$('build').disabled=false;$('build').innerText='Build my brief ↗';$('cards').removeAttribute('aria-busy');}
 });
 document.querySelectorAll('[data-topic]').forEach(button=>button.addEventListener('click',()=>{
   topic=button.dataset.topic;
@@ -216,7 +255,7 @@ document.querySelectorAll('[data-topic]').forEach(button=>button.addEventListene
   render();
 }));
 $('remember').addEventListener('change',()=>{
-  if($('remember').checked) saveIfChosen();
+  if($('remember').checked) { baselineConsentPending=true; saveIfChosen(true); }
   else forgetBaseline();
 });
 $('forget').addEventListener('click',forgetBaseline);
