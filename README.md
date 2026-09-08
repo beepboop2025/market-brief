@@ -8,6 +8,7 @@ withheld evidence alongside the reported observations. No account, broker
 connection, API key, or LLM subscription is needed for the Python helper or web app.
 
 [Open the free brief](https://beepboop2025.github.io/market-brief/) ·
+[Explore a copilot scenario](https://beepboop2025.github.io/market-brief/copilot.html) ·
 [Source and coverage](docs/coverage.md) ·
 [Distribution status](https://beepboop2025.github.io/market-brief/submissions.html) ·
 [Browser release verification](https://beepboop2025.github.io/market-brief/browser-release.json)
@@ -25,6 +26,24 @@ git clone --branch v0.1.0 --depth 1 https://github.com/beepboop2025/market-brief
 cd market-brief
 python3 skills/market-brief/scripts/market_brief.py --format markdown
 ```
+
+## Explore a copilot decision
+
+The [scenario explorer](https://beepboop2025.github.io/market-brief/copilot.html)
+shows six synthetic examples from the published trading copilot strategy:
+an entry candidate, a reduction, old inputs, a daily loss halt, stressed funding,
+and a residual below the minimum order size. Inspect invented inputs, reported
+metrics, reasons, and the evidence and operator checks still required.
+
+These are precomputed Python outputs with a fixed synthetic clock in the year
+2000. The browser verifies the published pack's byte hash; it does not run an
+AI model, fetch market data, assess evidence eligibility, or authorize orders.
+The strategy source, dataset and pack hashes are visible for reproduction.
+
+Copy the explained example, download Markdown, or share a scenario link. Links
+open the current published example. They contain a known scenario name only;
+they are not archived market records. Optional local demo counts use the
+existing activity consent and remain separate from research checks.
 
 ## Keep a focused research routine
 
@@ -156,6 +175,17 @@ python3 -m http.server 8096 --directory docs
 The helper vendors the fixed-route Financial Evidence v0.1.5 client. See
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). It uses Python's standard
 library; the browser app uses native JavaScript with no third-party scripts.
+
+To update the explorer, export the pack from an exact published Carrier source
+checkout with `python3 -S -B -m liquilens_trading_copilot.demo --all --source-ref`
+and the full commit SHA, using the Python path shown in the explorer's source
+section. Independently verify the published source bytes and exported SHA-256,
+then run `node scripts/sync_copilot_demo.mjs PACK_JSON EXPECTED_SHA256` here.
+This preserves the original Python JSON bytes and pins their hash in the web
+release; the browser does not duplicate the strategy logic. Run the unit suites
+above and `scripts/check_copilot.mjs` with a local docs server and Playwright
+available (`PLAYWRIGHT_MODULE`, `PLAYWRIGHT_CHANNEL`, `MARKET_BRIEF_URL` and
+`MARKET_BRIEF_ARTIFACTS` can select the runner, browser, URL and output directory).
 
 [Privacy](https://beepboop2025.github.io/market-brief/privacy.html) ·
 [Terms](https://beepboop2025.github.io/market-brief/terms.html) ·

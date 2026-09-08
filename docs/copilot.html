@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore six synthetic trading copilot scenarios. Inspect the proposed decision, its reasons and the checks still required. Free, no account or broker connection.">
+  <meta name="theme-color" content="#f4f2e9"><meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta property="og:type" content="website"><meta property="og:title" content="Explore a copilot decision — Market Brief">
+  <meta property="og:description" content="Six synthetic scenarios. The proposed decision, its reasons, and the evidence still required.">
+  <meta property="og:url" content="https://beepboop2025.github.io/market-brief/copilot.html">
+  <link rel="canonical" href="https://beepboop2025.github.io/market-brief/copilot.html"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="copilot.css">
+  <title>Explore a copilot decision — Market Brief</title>
+</head>
+<body>
+  <header class="site-header wrap"><a class="wordmark" href="./"><span class="mark" aria-hidden="true">m<span>:</span></span> market brief</a><nav aria-label="Main navigation"><a href="./">Build a research brief</a><a href="#demo-source">Reproduce this demo</a></nav></header>
+  <main class="wrap copilot-page">
+    <section class="copilot-intro"><p class="demo-label">Synthetic scenario explorer</p><h1>Understand the decision.<br>Inspect what is missing.</h1><p>Explore six examples from the trading copilot’s strategy. See what it proposes, why, and which checks still stand between a proposal and an order.</p><p class="demo-scope">Free to explore. No account, installation or broker connection. These are invented inputs, not live market signals.</p></section>
+    <div id="demo-status" class="notice" role="status" aria-live="polite">Loading the published examples…</div><button id="demo-retry" class="demo-button" hidden>Retry examples</button>
+    <section class="scenario-layout" aria-label="Explore a synthetic scenario">
+      <div class="scenario-rail"><h2>Choose a scenario</h2><div id="scenario-choices" class="scenario-choices" role="group" aria-label="Synthetic scenarios"></div></div>
+      <article id="scenario-detail" class="scenario-detail" hidden>
+        <div class="scenario-heading"><div><p id="scenario-question"></p><h2 id="scenario-title"></h2></div><span id="scenario-action" class="scenario-action"></span></div>
+        <p class="demo-blocked">No order is authorized. Evidence, operator and broker checks have not been evaluated.</p>
+        <figure class="demo-chart"><svg id="scenario-chart" viewBox="0 0 720 220" role="img" aria-labelledby="chart-title chart-description"><title id="chart-title">Synthetic price path</title><desc id="chart-description">Invented price bars used by the selected demonstration.</desc></svg><figcaption id="chart-caption"></figcaption></figure>
+        <div id="scenario-facts" class="scenario-facts"></div>
+        <section class="scenario-reasons"><h3>Why this output?</h3><ul id="scenario-reasons"></ul></section>
+        <section class="scenario-gates"><h3>What still needs checking?</h3><div id="scenario-gates"></div></section>
+        <p id="scenario-countercase" class="scenario-countercase"></p>
+        <details class="scenario-inputs"><summary>Inspect the synthetic inputs and strategy metrics</summary><h3>Invented portfolio</h3><dl id="scenario-portfolio"></dl><h3>Reported strategy metrics</h3><dl id="scenario-metrics"></dl><p>Missing metrics were not reported by this scenario’s strategy path.</p><h3>Fixed strategy settings</h3><dl id="scenario-settings"></dl></details>
+        <div class="scenario-actions"><button id="demo-copy" class="demo-button">Copy explained scenario</button><button id="demo-download" class="demo-button">Download Markdown</button><button id="demo-link" class="demo-button">Copy scenario link</button></div><p id="demo-action-status" role="status" aria-live="polite"></p><a id="scenario-share-url" class="quiet" href="copilot.html">Open this scenario</a>
+      </article>
+    </section>
+    <section class="demo-next"><h2>Bring the same questions to real research.</h2><p>Inspect published funding and liquidity observations, their dates and their gaps. Keep each product’s evidence separate.</p><a class="demo-button primary" href="./">Build a source-linked research brief</a><div class="demo-product-links"><a href="https://liquilens.in/start/?task=bank">Review institution evidence</a><a href="https://liquilens.in/start/?task=funding">Inspect funding context</a><a href="https://liquilens.in/start/?task=exit">Explore exit estimates</a></div></section>
+    <details id="demo-source" class="demo-source"><summary>Reproduce the examples and inspect the source</summary><p>The browser displays precomputed outputs from the published Python strategy. It does not run an AI model or evaluate current markets. The pack is checked against the file hash pinned in this release.</p><p><a id="demo-source-link">View the exact strategy source</a></p><dl id="demo-provenance"></dl><p><a href="https://github.com/beepboop2025/liquilens-evidence-carrier/tree/main/integrations/trading-copilot">Source checkout and demo commands</a></p><p id="demo-source-command"></p></details>
+    <details class="pilot demo-pilot"><summary>Help improve this explorer</summary><p>Optionally keep counts of scenario selections and copying on this device. The activity choice is shared with Market Brief.</p><label class="pilot-choice"><input id="demo-consent" type="checkbox"> Keep an activity log on this device</label><p class="quiet">Counts and UTC use days only, retained for 35 days. No scenario names, inputs, identifiers or market values. Nothing is sent automatically.</p><p id="demo-activity-status" role="status" aria-live="polite"></p><div class="pilot-actions"><button id="demo-activity-export" disabled>Download my activity report</button><a href="https://github.com/beepboop2025/market-brief/issues/new?title=Copilot%20scenario%20feedback" target="_blank" rel="noopener noreferrer">Give feedback</a></div><p class="quiet">Review the report before sharing it. GitHub feedback is public and requires sign-in. Uncheck the option to delete the log.</p></details>
+  </main>
+  <footer class="wrap"><a class="wordmark" href="./">market brief</a><p>Research tools from <a href="https://liquilens.in/">Liquidity Lab</a>.</p><nav aria-label="Legal and support"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></footer>
+  <script type="module" src="copilot.js"></script>
+</body>
+</html>

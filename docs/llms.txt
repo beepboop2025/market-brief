@@ -3,6 +3,7 @@
 > Free early-access funding, capital-market, and liquidity context for humans and AI copilots. Source-linked; no account, broker connection, or API key required for the helper.
 
 - [Try in browser](https://beepboop2025.github.io/market-brief/): fetch on request, optional local baseline, watch up to 12 observations, and review changes or evidence gaps.
+- [Copilot scenario explorer](https://beepboop2025.github.io/market-brief/copilot.html): six precomputed synthetic strategy examples with invented inputs, reasons, unevaluated checks, source hashes and Markdown export. No current market data, model call, evidence eligibility decision or order authorization. Separate from the brief's three-source coverage.
 - [Research handoff](https://beepboop2025.github.io/market-brief/#watch-title): preview and copy the selected observations, dates, comparisons and limits to a chosen AI assistant, or download Markdown. No AI provider is contacted by the app.
 - [LiquiLens bank example](https://liquilens.in/start/?task=bank): additional institution research; not included in the brief's source coverage.
 - [Seiche funding question](https://liquilens.in/start/?task=funding): inspect supporting funding evidence and counterevidence.
@@ -14,4 +15,4 @@
 - [Distribution](https://beepboop2025.github.io/market-brief/distribution.json): dated channel states.
 - [Privacy](https://beepboop2025.github.io/market-brief/privacy.html): no remote analytics; separate optional local baseline and activity log; sharing is user-controlled; public providers see requests.
 
-No ticker-specific news, portfolio advice, stock picks, position sizing, execution or Carrier verification. Source status is source-reported; transport success is not freshness or evidence eligibility. Paid AI hosts may charge independently. No automatic conversion to a paid plan.
+The research brief provides no ticker-specific news, portfolio advice, stock picks, position sizing, execution or Carrier verification. The separate synthetic explorer can display hypothetical strategy notionals; these are invented examples, not recommendations or market observations. Source status is source-reported; transport success is not freshness or evidence eligibility. Paid AI hosts may charge independently. No automatic conversion to a paid plan.

@@ -4,6 +4,28 @@ import {createActivity, parseActivity, recordActivity, activityReport} from '../
 const first = Date.parse('2026-09-06T12:00:00Z');
 const day = 86400000;
 
+test('old activity logs remain readable and demo activity does not count as a research check', () => {
+  const old = recordActivity(createActivity(first), 'checks', first);
+  for (const key of ['demo_views', 'demo_copies', 'demo_link_copies']) delete old.days[0][key];
+  const parsed = parseActivity(JSON.stringify(old), first);
+  assert.equal(parsed.days[0].demo_views, 0);
+  const selected = recordActivity(parsed, 'demo_views', first + 7 * day);
+  const copied = recordActivity(selected, 'demo_copies', first + 7 * day);
+  const report = activityReport(copied, first + 7 * day);
+  assert.equal(report.totals.checks, 1); assert.equal(report.totals.demo_views, 1); assert.equal(report.totals.demo_copies, 1);
+  assert.equal(report.distinct_check_days, 1); assert.equal(report.distinct_demo_days, 1);
+  assert.equal(report.returned_in_second_week, null, 'a synthetic demo must not establish a returning research user');
+});
+test('malformed demo counts are rejected and selection names are never retained', () => {
+  const log = recordActivity(createActivity(first), 'demo_views', first);
+  log.days[0].scenario = 'DO_NOT_RETAIN';
+  assert.equal(JSON.stringify(activityReport(log, first)).includes('DO_NOT_RETAIN'), false);
+  for (const bad of [null, '1', -1, 0.1, 10001]) {
+    const changed = structuredClone(log); changed.days[0].demo_views = bad;
+    assert.equal(parseActivity(JSON.stringify(changed), first), null);
+  }
+});
+
 test('consent creates an empty log and unknown attribution is discarded', () => {
   const log = createActivity(first, 'private@example.test');
   assert.deepEqual(log.days, []);
