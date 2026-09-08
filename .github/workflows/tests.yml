@@ -1,12 +1,13 @@
 name: Tests
 on:
-  push:
-    branches: [main]
   pull_request:
 permissions:
   contents: read
 jobs:
   test:
+    # Owner PRs use the credential-free native Railway PR environment.
+    # External contributors retain coverage because Railway requires membership.
+    if: github.event.pull_request.user.login != 'beepboop2025'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
