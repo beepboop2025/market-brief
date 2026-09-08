@@ -2,7 +2,8 @@
 export const ACTIVITY_KEY = 'market-brief.activity.v1';
 const SCHEMA = 'market-brief.activity.v1';
 const DAY = 86_400_000;
-const EVENTS = Object.freeze(['checks', 'copies', 'share_intents', 'cards_saved', 'source_opens']);
+const DEMO_EVENTS = Object.freeze(['demo_views', 'demo_copies', 'demo_link_copies']);
+const EVENTS = Object.freeze(['checks', 'copies', 'share_intents', 'cards_saved', 'source_opens', ...DEMO_EVENTS]);
 const SOURCES = new Set(['direct', 'share', 'telegram', 'partner', 'financial-evidence']);
 const utcDay = now => new Date(now).toISOString().slice(0, 10);
 const validDay = day => typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day)
@@ -25,6 +26,7 @@ export function parseActivity(raw, now = Date.now()) {
       seen.add(record.day);
       const clean = emptyDay(record.day);
       for (const event of EVENTS) {
+        if (DEMO_EVENTS.includes(event) && !Object.hasOwn(record, event)) continue;
         if (!Number.isSafeInteger(record[event]) || record[event] < 0 || record[event] > 10000) return null;
         clean[event] = record[event];
       }
@@ -59,6 +61,7 @@ export function activityReport(activity, now = Date.now()) {
     schema: 'market-brief.pilot-report.v1', scope: 'voluntary_single_browser_unverified',
     as_of_day: utcDay(now), retained_days: 35, entry_source: value.entry_source,
     totals, distinct_check_days: useDays.length,
+    distinct_demo_days: value.days.filter(day => day.demo_views > 0).length,
     returned_in_second_week: weekTwoReturn ? true : elapsed >= 14 ? false : null,
     days: value.days,
     notes: [
@@ -67,6 +70,7 @@ export function activityReport(activity, now = Date.now()) {
       'Share intents do not prove a message was sent, delivered or opened.',
       'Only the most recent 35 UTC days are retained; return measurement is relative to the first retained check.',
       'No identifier, market values, comparison history, full URLs or exact event times are included.',
+      'Demo selections, copies and link copies concern synthetic examples; they are separate from research checks and do not establish trading use.',
     ],
   };
 }
