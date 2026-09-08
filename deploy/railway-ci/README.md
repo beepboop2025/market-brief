@@ -23,3 +23,7 @@ environments build the changed repository; bot PR environments are enabled.
 Railway only creates previews for contributors associated with the workspace or
 project, so the GitHub PR workflow runs only as fallback for non-owner contributors
 until an equivalent external-fork executor is available.
+
+Native verification requires current main to be an ancestor of the exact tested
+head. A stale pull request fails admission and must merge/rebase main before
+rerunning. Build logs record both head and base revisions.
