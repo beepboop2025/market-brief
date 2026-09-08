@@ -1,0 +1,220 @@
+{
+  "schema": "market-brief.browser-release.v1",
+  "build_id": "2026-09-06-sharing",
+  "checked_at": "2026-09-06T16:17:02.311324Z",
+  "application_commit": "d2d47fef019e75b36066f6e8af14af90c12e08f5",
+  "url": "https://beepboop2025.github.io/market-brief/",
+  "scope": "Browser sharing, publisher embed and optional local pilot log. Existing skill and plugin remain v0.1.0.",
+  "tests": {
+    "python": 31,
+    "javascript": 48,
+    "result": "passed",
+    "github_actions_url": "https://github.com/beepboop2025/market-brief/actions/runs/34044568989"
+  },
+  "pages_build": {
+    "result": "success",
+    "url": "https://github.com/beepboop2025/market-brief/actions/runs/34044568235"
+  },
+  "local_browser": {
+    "checked_at": "2026-09-06T16:09:12.070Z",
+    "source_requests": 9,
+    "share_preview": true,
+    "image_download": true,
+    "native_cancellation": true,
+    "telegram_composer_checked_without_sending": true,
+    "no_preconsent_activity": true,
+    "no_retroactive_activity": true,
+    "pilot_export": true,
+    "independent_opt_out": true,
+    "cross_tab_opt_out": true,
+    "arrival_no_autofetch": true,
+    "unavailable_sources": true,
+    "mobile_no_overflow": true,
+    "no_remote_telemetry": true,
+    "page_errors": []
+  },
+  "public_browser": {
+    "url": "https://beepboop2025.github.io/market-brief/",
+    "checked_at": "2026-09-06T16:16:27.978Z",
+    "source_requests": 9,
+    "share_preview": true,
+    "image_download": true,
+    "native_cancellation": true,
+    "telegram_composer_checked_without_sending": true,
+    "no_preconsent_activity": true,
+    "no_retroactive_activity": true,
+    "pilot_export": true,
+    "independent_opt_out": true,
+    "cross_tab_opt_out": true,
+    "arrival_no_autofetch": true,
+    "unavailable_sources": true,
+    "mobile_no_overflow": true,
+    "functional_checks": "passed",
+    "network_check": "failed",
+    "unexpected_request_count": 35,
+    "no_remote_telemetry": null,
+    "page_errors": []
+  },
+  "public_partner": {
+    "checked_at": "2026-09-06T16:13:40.770Z",
+    "url": "https://beepboop2025.github.io/market-brief/partners.html",
+    "embed_url": "https://beepboop2025.github.io/market-brief/embed.html",
+    "functional_checks": "passed",
+    "network_check": "failed",
+    "initial_source_calls": 0,
+    "explicit_build_source_responses": 3,
+    "all_source_http_statuses": [
+      200,
+      200,
+      200
+    ],
+    "source_requests_anonymous": true,
+    "no_storage_or_parent_messages": true,
+    "mobile_no_overflow": true,
+    "page_errors": []
+  },
+  "network_verification": {
+    "status": "public_browser_interference_identified",
+    "detail": "Local browser network allowlist passed. Public app and embed functional checks passed. Fresh public Chrome contexts loaded an extra parser-inserted security script absent from repository HTML and independently fetched public HTML. The script contains NordVPN and threat-protection interface markers. The strict public network allowlist remains failed; it is not represented as a clean public network result.",
+    "source_of_extra_script": "Browser-response injection identified by NordVPN security tooling markers",
+    "identifying_markers": [
+      "nordvpn.com",
+      "scam-alert-overlay-change",
+      "tp-banner-shadow-host",
+      "tp-email-link-shield"
+    ],
+    "browser_protections_changed": false
+  },
+  "public_file_verification": {
+    "method": "Direct HTTP response bytes compared with the application commit",
+    "changed_files": [
+      {
+        "file": "index.html",
+        "http_status": 200,
+        "sha256": "0d38d587dcf28e0745ae988b991fc0f3aa373373f81d251b5e6c4643fcd8b343",
+        "matches_source": true
+      },
+      {
+        "file": "app.js",
+        "http_status": 200,
+        "sha256": "db99780fda4233bff5bcc1c40e99c93779ba996355ccaf0f7bd9ec3b4feb8497",
+        "matches_source": true
+      },
+      {
+        "file": "styles.css",
+        "http_status": 200,
+        "sha256": "e397da570bd754b62abc1d9613db82b2c4a8111f9909913c688615d9757edf5c",
+        "matches_source": true
+      },
+      {
+        "file": "activity.js",
+        "http_status": 200,
+        "sha256": "6ddb93170619bd274f0e587d41464868c4434956ed95f58de462b6e74122c679",
+        "matches_source": true
+      },
+      {
+        "file": "sharing.js",
+        "http_status": 200,
+        "sha256": "01939a7309673b6908f6dbc2b8ffa4ee3bdabada79f2ce09df9052871afabc2e",
+        "matches_source": true
+      },
+      {
+        "file": "share-card.js",
+        "http_status": 200,
+        "sha256": "6670cbfeac74697fe0fc71b442acb8adcb120e006bbefed18445ef13621aa423",
+        "matches_source": true
+      },
+      {
+        "file": "partners.html",
+        "http_status": 200,
+        "sha256": "17e863733152768ac02ec58d1d8efe0efa4c137e9b02a1a3c84f9179b4e4143d",
+        "matches_source": true
+      },
+      {
+        "file": "partners.js",
+        "http_status": 200,
+        "sha256": "3133647703c0f2ef611be82120a4ef9acfb236e992b1ac010a99ccfb1c520d46",
+        "matches_source": true
+      },
+      {
+        "file": "partners.css",
+        "http_status": 200,
+        "sha256": "6d14625afd448e91cafa41e88108daeffb21d5b516fca3de75f4df0cd9333c4a",
+        "matches_source": true
+      },
+      {
+        "file": "embed.html",
+        "http_status": 200,
+        "sha256": "5b6975885a8f87baf33e64c803dda3bb6d25241cdaf7e300beabe3bbfd5b01ff",
+        "matches_source": true
+      },
+      {
+        "file": "embed.js",
+        "http_status": 200,
+        "sha256": "e4dbb5df844fe77bf5bc6cf279b3f38bdd31ab7179ca22d0b720e8994e8e7da2",
+        "matches_source": true
+      },
+      {
+        "file": "embed.css",
+        "http_status": 200,
+        "sha256": "5d54928de896d85aa42cc2bf12bc9fdb11c7c2a8b727f500e7960925a740f35a",
+        "matches_source": true
+      },
+      {
+        "file": "embed-model.js",
+        "http_status": 200,
+        "sha256": "431b1128e9c0f0867d88b381ad1a16a26ccdc43f4dce0b763c3eb00fdd16717f",
+        "matches_source": true
+      },
+      {
+        "file": "privacy.html",
+        "http_status": 200,
+        "sha256": "fb8ba023c000ae58fd3e8f8a88865ace78ce812026ebee25e7e73a302c1918a8",
+        "matches_source": true
+      },
+      {
+        "file": "social-preview.png",
+        "http_status": 200,
+        "sha256": "5e700523680b44fa05e3ef856bc42b358724eeef227614208787f92821d051a3",
+        "matches_source": true
+      },
+      {
+        "file": "llms.txt",
+        "http_status": 200,
+        "sha256": "0a9ce716477b0cf3e4e6190a0fe811e960257f91d55765a2da6cf4ba728f2c9d",
+        "matches_source": true
+      },
+      {
+        "file": "sitemap.xml",
+        "http_status": 200,
+        "sha256": "137d2b81fc5aaf33dab05fe3d768995b6cd234eef842e1f153f8a8b66167e84f",
+        "matches_source": true
+      }
+    ]
+  },
+  "financial_evidence_placement": {
+    "url": "https://beepboop2025.github.io/financial-evidence-skills/",
+    "pr_url": "https://github.com/beepboop2025/financial-evidence-skills/pull/17",
+    "merge_commit": "e17513a00ecc8058101262c55879c268c9c2ec8a",
+    "state": "live",
+    "public_html_matches_merged_source": true,
+    "public_html_sha256": "7f02d8d790ed32766bf5094d71efbbb2ddadcd12137a8147d72faa20d595c8d1",
+    "links": [
+      "https://beepboop2025.github.io/market-brief/?ref=financial-evidence",
+      "https://beepboop2025.github.io/market-brief/partners.html"
+    ],
+    "local_tests": {
+      "python": 56,
+      "javascript": 6,
+      "result": "passed"
+    },
+    "actions_enabled": false,
+    "pages_note": "Public HTML verifies the deployment; the latest Pages build metadata was stale at verification."
+  },
+  "traction": {
+    "external_adoption": "not_measured",
+    "aggregate_users_or_retention_claimed": false,
+    "pilot_report_scope": "voluntary_single_browser_unverified",
+    "internal_checks_excluded": true
+  }
+}
