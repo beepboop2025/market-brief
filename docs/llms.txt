@@ -16,3 +16,8 @@
 - [Privacy](https://beepboop2025.github.io/market-brief/privacy.html): no remote analytics; separate optional local baseline and activity log; sharing is user-controlled; public providers see requests.
 
 The research brief provides no ticker-specific news, portfolio advice, stock picks, position sizing, execution or Carrier verification. The separate synthetic explorer can display hypothetical strategy notionals; these are invented examples, not recommendations or market observations. Source status is source-reported; transport success is not freshness or evidence eligibility. Paid AI hosts may charge independently. No automatic conversion to a paid plan.
+
+## Connected original research
+- Seiche research network: https://api.seiche.info/api/v2/research-network
+- Human research desk: https://seiche.info/#RESEARCH
+- MCP: https://api.seiche.info/mcp tool research_network (topic, offset, limit). Follow next_offset; preserve source clocks, rights and separate funding context.
