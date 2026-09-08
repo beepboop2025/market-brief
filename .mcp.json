@@ -3,6 +3,10 @@
     "financial-evidence": {
       "type": "http",
       "url": "https://liquilens.in/mcp/financial-evidence"
+    },
+    "seiche-research": {
+      "type": "http",
+      "url": "https://api.seiche.info/mcp"
     }
   }
 }
