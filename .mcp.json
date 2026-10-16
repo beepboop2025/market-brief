@@ -1,10 +1,10 @@
 {
   "mcpServers": {
-    "financial-evidence": {
+    "market-brief-financial-evidence": {
       "type": "http",
       "url": "https://liquilens.in/mcp/financial-evidence"
     },
-    "seiche-research": {
+    "market-brief-seiche-research": {
       "type": "http",
       "url": "https://api.seiche.info/mcp"
     }

@@ -1,6 +1,6 @@
 {
   "name": "market-brief",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Free funding and liquidity research briefs with source dates, explicit gaps, and local change comparison.",
   "author": {
     "name": "Liquidity Lab",
