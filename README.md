@@ -119,9 +119,22 @@ claude plugin install market-brief@market-brief
 Codex, through the same repository's marketplace:
 
 ```bash
-codex plugin marketplace add beepboop2025/market-brief --ref v0.1.0
+codex plugin marketplace add beepboop2025/market-brief --ref v0.1.1
 codex plugin add market-brief@market-brief
 ```
+
+GitHub Copilot CLI:
+
+```bash
+copilot plugin marketplace add beepboop2025/market-brief
+copilot plugin install market-brief@market-brief
+```
+
+Plugin integration version 0.1.1 names its connections
+`market-brief-financial-evidence` and `market-brief-seiche-research`. These names
+allow Market Brief and the individual Financial Evidence and Seiche plugins to
+coexist in clients that combine plugin connections by name. The pinned 0.1.0
+Python helper instructions above remain available.
 
 The plugin includes an optional connection to Financial Evidence's existing
 public MCP server. Its three tools retrieve context; the new brief workflow
